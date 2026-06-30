@@ -1,0 +1,143 @@
+.contact-page {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background-color: var(--white);
+}
+
+.contact-header {
+  margin-bottom: 48px;
+}
+
+.contact-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .contact-layout {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.contact-form-card {
+  flex: 1.5;
+  background-color: var(--warm-ivory);
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.contact-form-card h3 {
+  font-size: 24px;
+  color: var(--dark-espresso);
+  margin-bottom: 24px;
+}
+
+.quick-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.contact-info-cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.light-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.gold-icon {
+  color: var(--champagne-gold);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--charcoal);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  color: var(--champagne-gold);
+}
+
+.action-buttons-row {
+  display: flex;
+  gap: 16px;
+}
+
+.flex-1 {
+  flex: 1;
+  justify-content: center;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128C7E;
+}
+
+.map-section {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 64px;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--soft-beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23D8CAB8" width="100" height="100"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23c4b4a1" stroke-width="2"/></svg>');
+  background-size: 40px 40px;
+}
+
+.map-overlay-card {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}

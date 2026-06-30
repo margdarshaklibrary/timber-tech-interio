@@ -1,0 +1,140 @@
+# Implementation Plan - Timber Tech Interio Website
+
+Create a complete frontend-only, highly-polished React + CSS website for **Timber Tech Interio** (a premium furniture and interior brand in Darbhanga) based on the analyzed design language. It will be responsive, look premium (warm ivory/walnut/gold theme), and act as a Single Page Application (SPA) preserving tab states.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Tech Stack Details**
+> - **Build System**: React + Vite
+> - **Routing**: We will implement a React-state-based SPA router to seamlessly maintain form state, selected filters, and active sections across tabs without losing user input or causing full page reloads.
+> - **CSS**: Pure vanilla CSS variables inside `src/index.css` and page/component-specific CSS files under `src/styles/` (no Tailwind CSS, no component libraries).
+> - **Dependencies**: Only `lucide-react` for premium outline icons.
+
+> [!WARNING]
+> This is a **frontend-only** project. No backend, no Excel APIs, no databases will be connected. Form submissions will log the validated JSON data to the console and display a success state, leaving an API-ready `POST /api/appointment` call structure with clear comments for future backend integration.
+
+## Open Questions
+
+> [!NOTE]
+> 1. **Routing choice**: We are using a React state-based SPA router (`currentTab` state in `App.jsx`) because it naturally preserves state (e.g., active filters in Gallery or Projects, incomplete booking form fields) when navigating between pages. Please let us know if you prefer `react-router-dom` instead (note: with `react-router-dom`, preserving form fields and filters requires a global Context or storage, whereas a state-based router handles it natively).
+> 2. **AI Images**: We will use high-quality, relevant Unsplash image URLs that represent premium woodwork, kitchens, sofas, and interior design to give a realistic, production-ready feel.
+
+## Proposed Changes
+
+### Configuration & Base Setup
+#### [NEW] [package.json](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/package.json)
+- Set up project metadata and scripts (`dev`, `build`, `preview`).
+- Include standard dependencies: `react`, `react-dom`, `lucide-react`.
+- Include dev dependencies: `@types/react`, `@types/react-dom`, `@vitejs/plugin-react`, `vite`.
+
+#### [NEW] [vite.config.js](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/vite.config.js)
+- Standard Vite configuration with the React plugin.
+
+#### [NEW] [index.html](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/index.html)
+- Main HTML structure.
+- Import premium typography (Playfair Display serif for headings, Inter sans-serif for body) from Google Fonts.
+- Set title: `Timber Tech Interio | Crafting Your Dream Spaces`.
+
+#### [NEW] [src/main.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/main.jsx)
+- React entry point, mounting `App.jsx`.
+
+### Data Models
+#### [NEW] [src/data/siteData.js](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/data/siteData.js)
+- Consolidate all services, projects, gallery items, and testimonials in one file for easy maintenance.
+- Realistic descriptions and labels targeted at tier-2/3 town customers (simple, clear, conversion-focused English).
+
+### Global Styling
+#### [NEW] [src/index.css](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/index.css)
+- Declare CSS variables for the color palette:
+  - `--warm-ivory`: `#F7F1E7`
+  - `--soft-beige`: `#D8CAB8`
+  - `--deep-walnut`: `#3A2416`
+  - `--dark-espresso`: `#2C1B12`
+  - `--warm-wood`: `#8B5E34`
+  - `--champagne-gold`: `#C6A15B`
+  - `--charcoal`: `#1E1E1E`
+  - `--forest-green`: `#0F2A22`
+  - `--white`: `#FFFFFF`
+- Reset styles, typography classes (Playfair Display for headings, Inter for body), container spacing rules, and responsive padding values.
+
+### Components
+#### [NEW] [src/components/Navbar.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/components/Navbar.jsx) and [Navbar.css](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/styles/Navbar.css)
+- Sticky top navbar with logo, text links, and a highlighted "Book Appointment" pill button.
+- Mobile drawer menu with smooth hamburger toggle. Close drawer when a navigation link is clicked.
+
+#### [NEW] [src/components/Footer.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/components/Footer.jsx) and [Footer.css](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/styles/Footer.css)
+- Premium dark espresso background footer.
+- Columns: Brand info, Quick Links, Core Services, Studio Info (address, phone, hours), and a newsletter subscription block.
+
+#### [NEW] [src/components/SectionTitle.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/components/SectionTitle.jsx)
+- Reusable page header or section header (eyebrow label, H2 serif heading, optional subtitle, and decorative gold line divider).
+
+### Pages
+#### [NEW] [src/pages/Home.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/pages/Home.jsx) and [Home.css](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/styles/Home.css)
+- Hero section: large atmospheric hero image, bold headlines, Call / Book CTAs, and a stats bar (15+ Years, 2000+ Happy Customers, etc.).
+- About preview: split section introducing their local Darbhanga craftsmanship.
+- Services preview: showcase core collections.
+- Why Choose Us: 4 key benefits.
+- Testimonials: modern italic card slider/carousel.
+- Dark CTA banner: "Ready to Script Your Space?".
+
+#### [NEW] [src/pages/About.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/pages/About.jsx) and [About.css](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/styles/About.css)
+- Story of craftsmanship: who they are, their vision of strong materials, clean finish, and practical designs.
+- Purpose cards (dark & light side-by-side).
+- Interactive/visual pillars (materials, process, final delivery).
+
+#### [NEW] [src/pages/Services.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/pages/Services.jsx) and [Services.css](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/styles/Services.css)
+- 9-card Grid (Living, Bedroom, Modular Kitchen, Wardrobes, Dining, TV Units, Office, Full Home, Custom Furniture).
+- Realistic images, descriptions, and a "Request Quote" button opening a pre-filled appointment form.
+
+#### [NEW] [src/pages/Projects.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/pages/Projects.jsx) and [Projects.css](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/styles/Projects.css)
+- Category filter tab row (All, Living Room, Bedroom, Kitchen, Wardrobe, Office, Full Interior).
+- Filter state preserved properly when navigating away and back.
+- Interactive project cards with custom location tag, image hover zoom, and detailed stats.
+
+#### [NEW] [src/pages/Gallery.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/pages/Gallery.jsx) and [Gallery.css](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/styles/Gallery.css)
+- Category filter tabs (All Collections, Living, Bedroom, Kitchen, Dining, Office, Wardrobe, Showroom).
+- Responsive grid showing stunning interior and woodwork styling.
+- Lightbox feature to view gallery images in high resolution.
+
+#### [NEW] [src/pages/BookAppointment.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/pages/BookAppointment.jsx) and [BookAppointment.css](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/styles/BookAppointment.css)
+- Responsive split layout: left side is the appointment form; right side features the value props card & workshop banner.
+- Form fields: Full Name, Phone, Email, Location, Service, Appointment Date (disables past dates dynamically), Referral Channel, Message.
+- Field validations: Indian mobile number format (10 digits), email validation, and required field checks.
+- State-preserved form: fields maintain data even if switching to other pages and back, until successfully submitted.
+- Success confirmation notification.
+
+#### [NEW] [src/pages/Contact.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/pages/Contact.jsx) and [Contact.css](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/styles/Contact.css)
+- Premium hero header.
+- Split layout: Left is a quick contact/message form; Right is the contact cards (Address, Hours, Direct Buttons).
+- Direct call/WhatsApp buttons (`tel:`, `wa.me`).
+- Directions button with link to Google Maps for Hathauri Chowk, Darbhanga.
+- Interactive Google Maps placeholder block.
+
+### App Setup
+#### [NEW] [src/App.jsx](file:///c:/Users/margd/Desktop/Timber-Tech-Interio/src/App.jsx)
+- Root component managing:
+  - `currentTab` state (Home, About, Services, Projects, Gallery, Contact, Book).
+  - Selected project category filter state.
+  - Selected gallery category filter state.
+  - Appointment form state (to preserve state across pages).
+  - Simple routing structure rendering the corresponding page component.
+  - Global scrollToTop trigger on tab change.
+
+---
+
+## Verification Plan
+
+### Automated Checks
+- Validate that the project builds correctly via Vite (`npm run build`).
+
+### Manual Verification
+- **SPA Routing**: Verify tab switches are instantaneous, smooth, and do not reload the page.
+- **State Preservation**: Open "Book Appointment", fill in some details, navigate to "Gallery", filter by "Kitchen", go back to "Book Appointment" (form details should still be there), go back to "Gallery" (filter "Kitchen" should still be selected).
+- **Form Validations**:
+  - Submit empty form -> check validation errors.
+  - Enter invalid phone/email -> check field-specific error messages.
+  - Check that date picker disables yesterday and older dates.
+  - Submit successfully -> check console output for full JSON structure and success toast.
+- **Responsiveness**: Resize window to tablet and mobile widths. Verify navbar collapses to hamburger drawer, layouts change to single column, input fields expand to full width, and no horizontal scrollbar exists.
