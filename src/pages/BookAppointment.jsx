@@ -3,6 +3,7 @@ import { useAppContext } from '../context/AppContext';
 import SectionTitle from '../components/SectionTitle';
 import { CheckCircle } from 'lucide-react';
 import '../styles/BookAppointment.css';
+import workshopImg from '../assets/images/workshop.jpg';
 
 const BookAppointment = () => {
   const { appointmentFormData, setAppointmentFormData } = useAppContext();
@@ -207,7 +208,7 @@ const BookAppointment = () => {
             </div>
             
             <div className="info-image-card">
-              <img src="/src/assets/images/workshop.jpg" alt="Artisan Workshop" />
+              <img src={workshopImg} alt="Artisan Workshop" />
               <div className="image-card-overlay">
                 <h4>Artisan Workshop</h4>
                 <p>WHERE VISION BECOMES REALITY</p>

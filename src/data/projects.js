@@ -1,3 +1,10 @@
+import projectLiving from '../assets/images/project-living.jpg';
+import projectKitchen from '../assets/images/project-kitchen.jpg';
+import projectBedroom from '../assets/images/project-bedroom.jpg';
+import projectWardrobe from '../assets/images/project-wardrobe.jpg';
+import projectOffice from '../assets/images/project-office.jpg';
+import projectFullhome from '../assets/images/project-fullhome.jpg';
+
 export const projects = [
   {
     id: 'p1',
@@ -5,7 +12,7 @@ export const projects = [
     title: 'Modern Darbhanga Villa',
     location: 'Darbhanga, Bihar',
     description: 'A complete living room setup with a custom TV unit and luxury sofas.',
-    image: '/src/assets/images/project-living.jpg',
+    image: projectLiving,
     badge: 'Featured'
   },
   {
@@ -14,7 +21,7 @@ export const projects = [
     title: 'Smart Storage Kitchen',
     location: 'Laheriasarai, Darbhanga',
     description: 'Modular kitchen with deep walnut finish and smart storage solutions.',
-    image: '/src/assets/images/project-kitchen.jpg',
+    image: projectKitchen,
     badge: 'New'
   },
   {
@@ -23,7 +30,7 @@ export const projects = [
     title: 'Cozy Master Bedroom',
     location: 'Madhubani',
     description: 'Custom king-size bed with integrated side tables and warm lighting.',
-    image: '/src/assets/images/project-bedroom.jpg',
+    image: projectBedroom,
     badge: ''
   },
   {
@@ -32,7 +39,7 @@ export const projects = [
     title: 'Premium Sliding Wardrobe',
     location: 'Darbhanga, Bihar',
     description: 'Full-wall sliding wardrobe with mirror panels and clean finishing.',
-    image: '/src/assets/images/project-wardrobe.jpg',
+    image: projectWardrobe,
     badge: ''
   },
   {
@@ -41,7 +48,7 @@ export const projects = [
     title: 'Professional Workspace',
     location: 'Samastipur',
     description: 'Office interior with ergonomic desks and document storage units.',
-    image: '/src/assets/images/project-office.jpg',
+    image: projectOffice,
     badge: ''
   },
   {
@@ -50,7 +57,7 @@ export const projects = [
     title: 'Complete Home Setup',
     location: 'Darbhanga City',
     description: 'End-to-end interior design including all furniture and fixtures.',
-    image: '/src/assets/images/project-fullhome.jpg',
+    image: projectFullhome,
     badge: 'Popular'
   }
 ];

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   background-color: var(--dark-espresso);
-  background-image: url('/src/assets/images/hero.jpg');
+  background-image: url('../assets/images/hero.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

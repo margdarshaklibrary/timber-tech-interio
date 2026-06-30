@@ -6,6 +6,7 @@ import { services } from '../data/services';
 import { testimonials } from '../data/testimonials';
 import { ArrowRight, ShieldCheck, PenTool, HeartHandshake, Home as HomeIcon, Building2, Sofa, LayoutGrid } from 'lucide-react';
 import '../styles/Home.css';
+import workshopImg from '../assets/images/workshop.jpg';
 
 const Home = () => {
   // Show only 3 services for preview
@@ -92,7 +93,7 @@ const Home = () => {
             <Link to="/about" className="text-link mt-4">Discover Our Story <ArrowRight size={16}/></Link>
           </div>
           <div className="about-image">
-            <img src="/src/assets/images/workshop.jpg" alt="Timber Tech Workshop" />
+            <img src={workshopImg} alt="Timber Tech Workshop" />
           </div>
         </div>
       </section>
