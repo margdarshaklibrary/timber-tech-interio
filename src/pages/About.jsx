@@ -7,11 +7,11 @@ import '../styles/About.css';
 const About = () => {
   return (
     <div className="page-wrapper">
-      
+
       <section className="about-hero">
         <div className="about-hero-overlay"></div>
         <div className="container text-center position-relative">
-          <SectionTitle 
+          <SectionTitle
             eyebrow="OUR STORY"
             title="A Legacy Written in Wood"
             subtitle="Timber Tech Interio creates custom furniture and interiors for modern homes. We focus on strong materials, clean finishing and practical designs."
@@ -30,7 +30,7 @@ const About = () => {
           <div className="about-images">
             <div className="image-stack">
               <img src="/src/assets/images/gallery-showroom-1.jpg" alt="Showroom" className="img-back" />
-              <img src="/src/assets/images/gallery-living-2.jpg" alt="Living Room" className="img-front" />
+
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@ const About = () => {
 
       <section className="pillars-section section-padding bg-cream">
         <div className="container">
-          <SectionTitle 
+          <SectionTitle
             eyebrow="OUR FOUNDATION"
             title="The Pillars of Our Purpose"
             centered={true}
@@ -64,7 +64,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      
+
     </div>
   );
 };

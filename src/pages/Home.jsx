@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import ServiceCard from '../components/ServiceCard';
 import { services } from '../data/services';
 import { testimonials } from '../data/testimonials';
-import { ArrowRight, ShieldCheck, PenTool, HeartHandshake } from 'lucide-react';
+import { ArrowRight, ShieldCheck, PenTool, HeartHandshake, Home as HomeIcon, Building2, Sofa, LayoutGrid } from 'lucide-react';
 import '../styles/Home.css';
 
 const Home = () => {
   // Show only 3 services for preview
   const featuredServices = services.slice(0, 3);
+
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="page-wrapper">
@@ -27,25 +52,29 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Trust Counters */}
-      <section className="stats-section">
+      {/* Core Services Features */}
+      <section ref={sectionRef} className={`stats-section ${isVisible ? 'fade-in-visible' : ''}`}>
         <div className="container">
           <div className="stats-grid">
             <div className="stat-item">
-              <h3 className="stat-number">15+</h3>
-              <p className="stat-label">Years Experience</p>
+              <HomeIcon size={40} className="stat-icon" />
+              <h3 className="stat-title">Residential Interiors</h3>
+              <p className="stat-desc">Elegant interiors designed for comfortable and modern homes.</p>
             </div>
             <div className="stat-item">
-              <h3 className="stat-number">2000+</h3>
-              <p className="stat-label">Happy Customers</p>
+              <Building2 size={40} className="stat-icon" />
+              <h3 className="stat-title">Commercial Interiors</h3>
+              <p className="stat-desc">Professional interior solutions for offices and commercial spaces.</p>
             </div>
             <div className="stat-item">
-              <h3 className="stat-number">500+</h3>
-              <p className="stat-label">Projects Completed</p>
+              <Sofa size={40} className="stat-icon" />
+              <h3 className="stat-title">Custom Furniture</h3>
+              <p className="stat-desc">Made-to-measure furniture crafted to fit your space perfectly.</p>
             </div>
             <div className="stat-item">
-              <h3 className="stat-number">100%</h3>
-              <p className="stat-label">Custom Design</p>
+              <LayoutGrid size={40} className="stat-icon" />
+              <h3 className="stat-title">Modular Solutions</h3>
+              <p className="stat-desc">Smart modular kitchens, wardrobes, storage, and interior solutions.</p>
             </div>
           </div>
         </div>
