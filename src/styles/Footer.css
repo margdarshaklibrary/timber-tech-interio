@@ -148,3 +148,107 @@
 .footer-legal a:hover {
   color: var(--white);
 }
+
+/* ============================================
+   MOBILE ONLY — max-width: 767px
+   Desktop and tablet layouts are untouched.
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* Footer top/bottom padding */
+  .footer {
+    padding: 40px 0 16px;
+  }
+
+  /* Grid: single column, tighter gaps */
+  .footer-grid {
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  /* Logo section — compact */
+  .footer-logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+
+  /* Social icons immediately under tagline, no extra space */
+  .social-links {
+    gap: 12px;
+    margin-bottom: 0;
+  }
+
+  /* Section headings */
+  .footer-heading {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  /* Quick Links & Services — 10–12px between items */
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+  }
+
+  /* Contact list — compact */
+  .footer-contact-list {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .footer-contact-list li {
+    font-size: 13px;
+    line-height: 1.45;
+    gap: 10px;
+  }
+
+  .footer-hours {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  /* Footer bottom — stacked, centered */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding-top: 16px;
+    font-size: 12px;
+  }
+
+  /* Legal links — stacked vertically */
+  .footer-legal {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Hide the bullet separator on mobile */
+  .footer-legal span {
+    display: none;
+  }
+
+  .footer-legal a {
+    font-size: 12px;
+  }
+
+  /* Prevent any horizontal overflow */
+  .footer {
+    overflow-x: hidden;
+  }
+
+  /* Safe-area bottom */
+  .footer {
+    padding-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+  }
+}

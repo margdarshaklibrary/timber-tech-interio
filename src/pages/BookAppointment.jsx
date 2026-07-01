@@ -5,10 +5,14 @@ import { CheckCircle } from 'lucide-react';
 import '../styles/BookAppointment.css';
 import workshopImg from '../assets/images/workshop.jpg';
 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxPrjUI82-VFsYGYev1Jcodog7-2oAhyb7dpqKc0WCj1EILDJf5JogZrfv5GeQiJK15/exec';
+
 const BookAppointment = () => {
   const { appointmentFormData, setAppointmentFormData } = useAppContext();
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
   const [minDate, setMinDate] = useState('');
 
   // Set minimum date to today
@@ -56,19 +60,46 @@ const BookAppointment = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      // Backend developer can connect this endpoint with Excel API later
-      // fetch('/api/appointment', { method: 'POST', body: JSON.stringify(appointmentFormData) })
-      
-      console.log('Form Submitted successfully:', appointmentFormData);
-      setIsSubmitted(true);
-      
-      // Clear form after success
-      setAppointmentFormData({
-        fullName: '', phone: '', email: '', location: '', serviceType: '', appointmentDate: '', referral: '', message: ''
-      });
+      setIsSubmitting(true);
+      setSubmitError(null);
+
+      try {
+        const payload = new URLSearchParams();
+        payload.append("fullName", appointmentFormData.fullName);
+        payload.append("phone", appointmentFormData.phone);
+        payload.append("email", appointmentFormData.email);
+        payload.append("location", appointmentFormData.location);
+        payload.append("serviceType", appointmentFormData.serviceType);
+        payload.append("appointmentDate", appointmentFormData.appointmentDate);
+        payload.append("referral", appointmentFormData.referral);
+        payload.append("message", appointmentFormData.message);
+
+        const response = await fetch("https://script.google.com/macros/s/AKfycbxPrjUI82-VFsYGYev1Jcodog7-2oAhyb7dpqKc0WCj1EILDJf5JogZrfv5GeQiJK15/exec", {
+          method: "POST",
+          body: payload
+        });
+
+        const result = await response.json();
+
+        if (result.status === "success") {
+          setIsSubmitted(true);
+          // Clear form after successful submit
+          setAppointmentFormData({
+            fullName: '', phone: '', email: '', location: '', serviceType: '', appointmentDate: '', referral: '', message: ''
+          });
+          setErrors({});
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.log('Submission error:', err);
+        setSubmitError('Something went wrong. Please try again or contact us on WhatsApp: 9939557655.');
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -92,8 +123,11 @@ const BookAppointment = () => {
               <div className="success-message">
                 <CheckCircle size={48} className="success-icon" />
                 <h2>Thank You!</h2>
-                <p>Your appointment request has been received. Our team will contact you shortly to confirm the timing.</p>
-                <button className="btn btn-primary-dark mt-4" onClick={() => setIsSubmitted(false)}>
+                <p>Thank you! Your appointment request has been received. Our team will call you soon.</p>
+                <p className="secondary-line">
+                  For quick help, you can also call or WhatsApp us at <a href="https://wa.me/919939557655" target="_blank" rel="noopener noreferrer" className="contact-link">9939557655</a>.
+                </p>
+                <button className="btn btn-primary-dark mt-4" onClick={() => { setIsSubmitted(false); setSubmitError(null); }}>
                   Book Another Appointment
                 </button>
               </div>
@@ -171,8 +205,23 @@ const BookAppointment = () => {
                   </div>
                 </div>
 
+                {submitError && (
+                  <div className="error-banner">
+                    Something went wrong. Please try again or contact us on WhatsApp: <a href="https://wa.me/919939557655" target="_blank" rel="noopener noreferrer">9939557655</a>.
+                  </div>
+                )}
+
                 <div className="form-actions">
-                  <button type="submit" className="btn btn-primary-dark">Confirm Booking</button>
+                  <button type="submit" className="btn btn-primary-dark" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <>
+                        <span className="spinner"></span>
+                        Submitting...
+                      </>
+                    ) : (
+                      'Confirm Booking'
+                    )}
+                  </button>
                 </div>
               </form>
             )}
