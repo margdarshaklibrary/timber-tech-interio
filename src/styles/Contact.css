@@ -1,143 +1,473 @@
 .contact-page {
-  padding-top: 120px;
+  padding-top: 140px;
   padding-bottom: 80px;
-  background-color: var(--white);
-}
-
-.contact-header {
-  margin-bottom: 48px;
-}
-
-.contact-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-@media (min-width: 1024px) {
-  .contact-layout {
-    flex-direction: row;
-    align-items: stretch;
-  }
-}
-
-.contact-form-card {
-  flex: 1.5;
   background-color: var(--warm-ivory);
-  padding: 40px;
-  border-radius: 12px;
 }
 
-.contact-form-card h3 {
-  font-size: 24px;
+/* 1. Hero Section */
+.contact-hero {
+  margin-bottom: 56px;
+  max-width: 800px;
+}
+
+.contact-hero .eyebrow-line {
+  width: 40px;
+  height: 2px;
+  background-color: var(--champagne-gold);
+  margin-bottom: 20px;
+}
+
+.contact-hero .hero-title {
+  font-size: 38px;
   color: var(--dark-espresso);
-  margin-bottom: 24px;
-}
-
-.quick-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.mt-4 {
-  margin-top: 16px;
-}
-
-.contact-info-cards {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.light-card {
-  background-color: var(--white);
-  border: 1px solid var(--border-light);
-  padding: 32px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-}
-
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin-bottom: 16px;
-}
-
-.gold-icon {
-  color: var(--champagne-gold);
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--charcoal);
-  font-size: 14px;
   font-weight: 500;
 }
 
-.contact-link:hover {
-  color: var(--champagne-gold);
+.contact-hero .hero-description {
+  font-size: 17px;
+  color: var(--charcoal);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  opacity: 0.9;
 }
 
-.action-buttons-row {
+.hero-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
-.flex-1 {
-  flex: 1;
-  justify-content: center;
+.hero-actions .btn {
+  height: 48px;
+  min-width: 150px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(58, 36, 22, 0.05);
 }
 
-.btn-whatsapp {
+.hero-actions .btn-whatsapp {
   background-color: #25D366;
-  color: white;
+  color: var(--white);
 }
 
-.btn-whatsapp:hover {
+.hero-actions .btn-whatsapp:hover {
   background-color: #128C7E;
+  transform: translateY(-1px);
 }
 
-.map-section {
-  width: 100%;
-  height: 400px;
-  border-radius: 12px;
+.hero-actions .btn-primary-dark:hover {
+  transform: translateY(-1px);
+}
+
+.hero-actions .btn-outline-dark:hover {
+  background-color: var(--dark-espresso);
+  color: var(--white);
+  border-color: var(--dark-espresso);
+  transform: translateY(-1px);
+}
+
+/* 2. Google Map & Showroom Section */
+.map-showcase-section {
+  margin-bottom: 64px;
+}
+
+.map-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+  gap: 32px;
+}
+
+.map-frame-container {
+  height: 450px;
+  border-radius: 16px;
   overflow: hidden;
-  margin-top: 64px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 30px rgba(58, 36, 22, 0.04);
 }
 
-.map-placeholder {
+.showroom-iframe-map {
   width: 100%;
   height: 100%;
-  background-color: var(--soft-beige);
+  border: 0;
+  display: block;
+}
+
+.showroom-details-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(58, 36, 22, 0.04);
+  transition: transform 0.3s ease;
+}
+
+.showroom-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--warm-ivory);
+  padding-bottom: 16px;
+}
+
+.showroom-card-header h3 {
+  font-size: 22px;
+  color: var(--dark-espresso);
+  font-family: var(--font-serif);
+}
+
+.showroom-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.showroom-body .company-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--warm-wood);
+  margin-bottom: 12px;
+  font-family: var(--font-sans);
+}
+
+.showroom-body .company-address {
+  font-style: normal;
+  font-size: 15px;
+  color: var(--charcoal);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.showroom-timing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-top: auto;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+/* 3. Contact Details Grid */
+.contact-details-section {
+  margin-bottom: 64px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.details-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 32px 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 20px rgba(58, 36, 22, 0.02);
+  transition: all 0.3s ease;
+}
+
+.details-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(58, 36, 22, 0.08);
+}
+
+.details-card.priority-card {
+  border: 1.5px solid var(--border-light);
+}
+
+.details-card.phone-card:hover {
+  border-color: var(--champagne-gold);
+}
+
+.details-card.whatsapp-card:hover {
+  border-color: #25D366;
+}
+
+.card-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: var(--dark-espresso);
+  background-color: var(--warm-ivory);
+}
+
+.card-badge.bg-green {
+  background-color: rgba(37, 211, 102, 0.15);
+  color: #128C7E;
+}
+
+.details-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.details-card-header h3 {
+  font-size: 18px;
+  color: var(--dark-espresso);
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+
+.icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--warm-ivory);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23D8CAB8" width="100" height="100"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23c4b4a1" stroke-width="2"/></svg>');
-  background-size: 40px 40px;
 }
 
-.map-overlay-card {
-  background-color: var(--white);
-  padding: 40px;
-  border-radius: 12px;
+.icon-wrapper.bg-whatsapp-light {
+  background-color: rgba(37, 211, 102, 0.1);
+}
+
+.whatsapp-green-icon {
+  color: #25D366;
+}
+
+.card-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark-espresso);
+  margin-bottom: 8px;
+}
+
+.email-value {
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.card-desc {
+  font-size: 13.5px;
+  color: var(--charcoal);
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.card-action-btn {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--champagne-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.card-action-btn:hover {
+  color: var(--dark-espresso);
+}
+
+.card-action-btn.whatsapp-text {
+  color: #128C7E;
+}
+
+.card-action-btn.whatsapp-text:hover {
+  color: #075E54;
+}
+
+.card-action-btn.secondary-text:hover {
+  color: var(--champagne-gold);
+}
+
+.card-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.card-status-indicator .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #25D366;
+}
+
+.card-status-indicator .pulse-dot {
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.card-status-indicator .status-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--charcoal);
+  opacity: 0.7;
+}
+
+/* 4. Consultation CTA Section */
+.consultation-cta-section {
+  background-color: var(--dark-espresso);
+  border-radius: 20px;
+  padding: 64px 32px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(44, 27, 18, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.consultation-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 10% 20%, rgba(198, 161, 91, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
-.mb-2 {
+.consultation-cta-section h2 {
+  font-size: 32px;
+  color: var(--white);
+  font-family: var(--font-serif);
+}
+
+.consultation-cta-section p {
+  font-size: 16px;
+  color: var(--white);
+  line-height: 1.6;
+  opacity: 0.9;
   margin-bottom: 8px;
+}
+
+.consultation-cta-section .btn {
+  height: 48px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(198, 161, 91, 0.2);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* RESPONSIVE LAYOUTS */
+
+/* Tablet View */
+@media (max-width: 1023px) {
+  .contact-page {
+    padding-top: 110px;
+  }
+  
+  .map-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .map-frame-container {
+    height: 400px;
+  }
+  
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .consultation-cta-section {
+    padding: 48px 24px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+  .contact-page {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .contact-hero {
+    margin-bottom: 40px;
+  }
+
+  .contact-hero .hero-title {
+    font-size: 30px;
+  }
+
+  .contact-hero .hero-description {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .map-frame-container {
+    height: 300px;
+  }
+
+  .showroom-details-card {
+    padding: 30px 20px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .details-card {
+    padding: 24px 20px;
+  }
+
+  .consultation-cta-section h2 {
+    font-size: 26px;
+  }
+
+  .consultation-cta-section p {
+    font-size: 15px;
+  }
 }
