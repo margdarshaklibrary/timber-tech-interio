@@ -1,9 +1,9 @@
-import projectLiving from '../assets/images/project-living.jpg';
-import projectKitchen from '../assets/images/project-kitchen.jpg';
-import projectBedroom from '../assets/images/project-bedroom.jpg';
-import projectWardrobe from '../assets/images/project-wardrobe.jpg';
-import projectOffice from '../assets/images/project-office.jpg';
-import projectFullhome from '../assets/images/project-fullhome.jpg';
+import projectLiving from '../assets/projects/living-room-1.webp';
+import projectKitchen from '../assets/projects/lobby-1.webp';
+import projectBedroom from '../assets/projects/bedroom-1.webp';
+import projectWardrobe from '../assets/projects/wardrobe-1.webp';
+import projectOffice from '../assets/projects/office-1.webp';
+import projectFullhome from '../assets/projects/showroom-1.webp';
 
 export const projects = [
   {

@@ -1,12 +1,12 @@
-import galleryLiving1 from '../assets/images/gallery-living-1.jpg';
-import galleryBed1 from '../assets/images/gallery-bed-1.jpg';
-import galleryShowroom1 from '../assets/images/gallery-showroom-1.jpg';
-import galleryKitchen1 from '../assets/images/gallery-kitchen-1.jpg';
-import galleryDining1 from '../assets/images/gallery-dining-1.jpg';
-import galleryOffice1 from '../assets/images/gallery-office-1.jpg';
-import galleryWardrobe1 from '../assets/images/gallery-wardrobe-1.jpg';
-import galleryLiving2 from '../assets/images/gallery-living-2.jpg';
-import galleryShowroom2 from '../assets/images/gallery-showroom-2.jpg';
+import galleryLiving1 from '../assets/gallery/living-room/living-room-1.webp';
+import galleryBed1 from '../assets/gallery/bedroom/bedroom-1.webp';
+import galleryShowroom1 from '../assets/gallery/showroom/showroom-1.webp';
+import galleryKitchen1 from '../assets/gallery/lobby/lobby-1.webp';
+import galleryDining1 from '../assets/gallery/showroom/showroom-1.webp';
+import galleryOffice1 from '../assets/gallery/office/office-1.webp';
+import galleryWardrobe1 from '../assets/gallery/wardrobe/wardrobe-1.webp';
+import galleryLiving2 from '../assets/gallery/living-room/living-room-2.webp';
+import galleryShowroom2 from '../assets/gallery/showroom/showroom-1.webp';
 
 export const galleryCategories = [
   'All Collections',

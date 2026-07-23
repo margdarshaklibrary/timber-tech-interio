@@ -1,12 +1,12 @@
-import livingRoom from '../assets/images/living-room.jpg';
-import bedroom from '../assets/images/bedroom.jpg';
-import kitchen from '../assets/images/kitchen.jpg';
-import wardrobe from '../assets/images/wardrobe.jpg';
-import dining from '../assets/images/dining.jpg';
-import tvUnit from '../assets/images/tv-unit.jpg';
-import office from '../assets/images/office.jpg';
-import fullHome from '../assets/images/full-home.jpg';
-import customFurniture from '../assets/images/custom-furniture.jpg';
+import livingRoom from '../assets/gallery/living-room/living-room-1.webp';
+import bedroom from '../assets/gallery/bedroom/bedroom-1.webp';
+import kitchen from '../assets/gallery/lobby/lobby-1.webp';
+import wardrobe from '../assets/gallery/wardrobe/wardrobe-1.webp';
+import dining from '../assets/gallery/showroom/showroom-1.webp';
+import tvUnit from '../assets/gallery/living-room/living-room-2.webp';
+import office from '../assets/gallery/office/office-1.webp';
+import fullHome from '../assets/gallery/lobby/lobby-1.webp';
+import customFurniture from '../assets/gallery/wardrobe/wardrobe-2.webp';
 
 export const services = [
   {
