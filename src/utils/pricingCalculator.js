@@ -16,7 +16,7 @@ export const calculateKitchenEstimate = (config) => {
   
   if (layout === 'straight' && dimensions.length) {
     totalBaseRFT = dimensions.length;
-  } else if (layout === 'l-shaped' && dimensions.runA && dimensions.runB) {
+  } else if ((layout === 'l-shaped' || layout === 'peninsula') && dimensions.runA && dimensions.runB) {
     // Subtract corner overlap (approx 2ft)
     totalBaseRFT = dimensions.runA + dimensions.runB - 2;
   } else if (layout === 'parallel' && dimensions.runA && dimensions.runB) {

@@ -7,6 +7,7 @@ const LargeVisualCard = ({
   imageSrc, 
   isSelected, 
   isLayout = false,
+  isWide = false,
   onClick 
 }) => {
   return (
@@ -15,7 +16,7 @@ const LargeVisualCard = ({
       onClick={onClick}
     >
       {badge && <div className="card-badge">{badge}</div>}
-      <div className="lvc-visual">
+      <div className={`lvc-visual ${isWide ? 'lvc-visual-wide' : ''}`}>
         <img 
           src={imageSrc} 
           alt={title} 

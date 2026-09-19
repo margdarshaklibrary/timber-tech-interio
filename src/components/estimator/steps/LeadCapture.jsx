@@ -55,7 +55,6 @@ const LeadCapture = () => {
               <div className="summary-item"><span className="summary-label">Layout</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{kitchenConfig.layout}</span></div>
               <div className="summary-item"><span className="summary-label">Dimensions</span><span className="summary-value">{formatDimensions(kitchenConfig.dimensions, kitchenConfig.layout)}</span></div>
               <div className="summary-item"><span className="summary-label">Configuration</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{kitchenConfig.cabinetConfig.join(' + ')}</span></div>
-              <div className="summary-item"><span className="summary-label">Package</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{kitchenConfig.package.replace('_', ' ')}</span></div>
             </>
           )}
           {category === 'wardrobe' && (
@@ -63,23 +62,25 @@ const LeadCapture = () => {
               <div className="summary-item"><span className="summary-label">Type</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{wardrobeConfig?.type}</span></div>
               <div className="summary-item"><span className="summary-label">Dimensions</span><span className="summary-value">{wardrobeConfig?.dimensions?.width} W × {wardrobeConfig?.dimensions?.height} H</span></div>
               <div className="summary-item"><span className="summary-label">Finish</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{wardrobeConfig?.shutterFinish}</span></div>
-              <div className="summary-item"><span className="summary-label">Package</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{wardrobeConfig?.package}</span></div>
             </>
           )}
           {category === 'bedroom' && (
             <>
-              <div className="summary-item"><span className="summary-label">Scope</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{bedroomConfig?.scope}</span></div>
-              <div className="summary-item"><span className="summary-label">Bed Type</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{bedroomConfig?.bedType}</span></div>
+              <div className="summary-item"><span className="summary-label">Scope</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{bedroomConfig?.scope?.replace('+', ' + ')}</span></div>
+              <div className="summary-item"><span className="summary-label">Bed</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{bedroomConfig?.bedType} / {bedroomConfig?.headboard}</span></div>
+              {(bedroomConfig?.scope?.includes('wardrobe') || bedroomConfig?.scope === 'complete') && (
+                <div className="summary-item"><span className="summary-label">Wardrobe</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{bedroomConfig?.wardrobeType}</span></div>
+              )}
+              <div className="summary-item"><span className="summary-label">Dimensions</span><span className="summary-value">Bed: {bedroomConfig?.dimensions?.bedWidth}×{bedroomConfig?.dimensions?.bedLength} {(bedroomConfig?.scope?.includes('wardrobe') || bedroomConfig?.scope === 'complete') ? `| Wardrobe: ${bedroomConfig.dimensions.wardrobeWidth}×${bedroomConfig.dimensions.wardrobeHeight}×${bedroomConfig.dimensions.wardrobeDepth}` : ''}</span></div>
               <div className="summary-item"><span className="summary-label">Finish</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{bedroomConfig?.shutterFinish}</span></div>
-              <div className="summary-item"><span className="summary-label">Package</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{bedroomConfig?.package}</span></div>
             </>
           )}
           {category === 'living' && (
             <>
-              <div className="summary-item"><span className="summary-label">Scope</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{livingRoomConfig?.scope}</span></div>
-              <div className="summary-item"><span className="summary-label">TV Layout</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{livingRoomConfig?.tvLayout}</span></div>
+              <div className="summary-item"><span className="summary-label">Scope</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{livingRoomConfig?.scope?.replace('-', ' ')}</span></div>
+              <div className="summary-item"><span className="summary-label">Layout</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{livingRoomConfig?.storage?.length > 0 ? livingRoomConfig.storage.join(' + ') : 'None'}</span></div>
+              <div className="summary-item"><span className="summary-label">Dimensions</span><span className="summary-value">{livingRoomConfig?.dimensions?.wallWidth}W × {livingRoomConfig?.dimensions?.wallHeight}H × {livingRoomConfig?.dimensions?.depth}D</span></div>
               <div className="summary-item"><span className="summary-label">Finish</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{livingRoomConfig?.shutterFinish}</span></div>
-              <div className="summary-item"><span className="summary-label">Package</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{livingRoomConfig?.package}</span></div>
             </>
           )}
           {category === 'office' && (
@@ -87,7 +88,6 @@ const LeadCapture = () => {
               <div className="summary-item"><span className="summary-label">Scope</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{officeConfig?.scope}</span></div>
               <div className="summary-item"><span className="summary-label">Area Sqft</span><span className="summary-value">{officeConfig?.dimensions?.areaSqft}</span></div>
               <div className="summary-item"><span className="summary-label">Finish</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{officeConfig?.shutterFinish}</span></div>
-              <div className="summary-item"><span className="summary-label">Package</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{officeConfig?.package}</span></div>
             </>
           )}
           {category === 'full-home' && (
@@ -95,7 +95,6 @@ const LeadCapture = () => {
               <div className="summary-item"><span className="summary-label">Property</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{fullHomeConfig?.propertyType}</span></div>
               <div className="summary-item"><span className="summary-label">Rooms</span><span className="summary-value">{fullHomeConfig?.rooms?.length} selected</span></div>
               <div className="summary-item"><span className="summary-label">Additions</span><span className="summary-value">{fullHomeConfig?.additions?.length} selected</span></div>
-              <div className="summary-item"><span className="summary-label">Package</span><span className="summary-value" style={{ textTransform: 'capitalize' }}>{fullHomeConfig?.package?.replace('_', ' ')}</span></div>
             </>
           )}
         </div>

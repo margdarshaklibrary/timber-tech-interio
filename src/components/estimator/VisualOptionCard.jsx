@@ -6,11 +6,12 @@ const VisualOptionCard = ({
   imageSrc, 
   isSelected, 
   onClick, 
-  badge
+  badge,
+  className = ''
 }) => {
   return (
     <div 
-      className={`visual-option-card ${isSelected ? 'selected' : ''}`}
+      className={`visual-option-card ${isSelected ? 'selected' : ''} ${className}`}
       onClick={onClick}
     >
       {badge && <div className="card-badge">{badge}</div>}

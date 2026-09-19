@@ -4,23 +4,42 @@ import ProgressIndicator from '../../ProgressIndicator';
 import VisualOptionCard from '../../VisualOptionCard';
 import LargeVisualCard from '../../LargeVisualCard';
 import DimensionInput from '../../DimensionInput';
+import MaterialCard from '../../MaterialCard';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-import hingedImg from '../../../../assets/estimator/wardrobe_type_hinged_1789802046966.png';
-import slidingImg from '../../../../assets/estimator/wardrobe_type_sliding_1789802064907.png';
-import walkInImg from '../../../../assets/estimator/wardrobe_type_walkin_1789802081466.png';
-import builtInImg from '../../../../assets/projects/wardrobe-1.webp';
+import hingedImg from '../../../../assets/estimator/hinged wardrobe.png';
+import slidingImg from '../../../../assets/estimator/sliding wardrobe.png';
+import walkInImg from '../../../../assets/estimator/walk-in-wardrobe.png';
+import builtInImg from '../../../../assets/estimator/built-inniche wardrobe.png';
 import matteImg from '../../../../assets/estimator/finish_matte_laminate_1789802016310.png';
 import acrylicImg from '../../../../assets/estimator/finish_glossy_acrylic_1789802033831.png';
 import showroomImg from '../../../../assets/projects/showroom-1.webp';
 import wardrobe1 from '../../../../assets/projects/wardrobe-1.webp';
 
+import plywoodImg from '../../../../assets/estimator/plywood.png';
+import hdhmrImg from '../../../../assets/estimator/HDHMR.png';
+import laminateImg from '../../../../assets/estimator/Laminate.png';
+import veneerImg from '../../../../assets/estimator/Veneer.png';
+import puImg from '../../../../assets/estimator/PU Finish.png';
+
+import hangingFocusImg from '../../../../assets/estimator/hanging focus.png';
+import shelvingFocusImg from '../../../../assets/estimator/shelving focus.png';
+import balancedImg from '../../../../assets/estimator/balanced or combination.png';
+import drawerHeavyImg from '../../../../assets/estimator/drawer heary.png';
+
+import pullDownImg from '../../../../assets/estimator/pulldown hanger.png';
+import jewelleryImg from '../../../../assets/estimator/jewellary drawer.png';
+import lightingImg from '../../../../assets/estimator/internal-lightening.png';
+import mirrorImg from '../../../../assets/estimator/mirror.png';
+import softCloseImg from '../../../../assets/estimator/self-close-hardware.png';
+import trouserRackImg from '../../../../assets/estimator/trouser-rack.png';
+
 const WARDROBE_STEPS = [
-  'Type',
+  'Scope',
   'Internal Layout',
   'Dimensions',
   'Material & Finish',
-  'Package & Extras'
+  'Accessories'
 ];
 
 const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
@@ -48,7 +67,10 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
     if (internalStep === 2) return !wardrobeConfig.internalLayout;
     if (internalStep === 3) {
       const d = wardrobeConfig.dimensions;
-      return !d.width || !d.height;
+      return !d.width || !d.height || !d.depth;
+    }
+    if (internalStep === 4) {
+      return !wardrobeConfig.coreMaterial || !wardrobeConfig.shutterFinish;
     }
     return false;
   };
@@ -76,7 +98,7 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
               <h2 className="step-title">Choose Your Wardrobe Type</h2>
               <p className="step-subtitle">Select the outer structure of your wardrobe.</p>
             </div>
-            <div className="layout-grid">
+            <div className="layout-grid-4">
               <LargeVisualCard 
                 title="Hinged Wardrobe" 
                 imageSrc={hingedImg}
@@ -115,28 +137,28 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
               <VisualOptionCard 
                 title="Hanging Focus" 
                 description="More space for hanging clothes"
-                imageSrc={wardrobe1}
+                imageSrc={hangingFocusImg}
                 isSelected={wardrobeConfig.internalLayout === 'hanging'}
                 onClick={() => updateWardrobeConfig('internalLayout', 'hanging')}
               />
               <VisualOptionCard 
                 title="Shelving Focus" 
                 description="More stacked folded clothes"
-                imageSrc={wardrobe1}
+                imageSrc={shelvingFocusImg}
                 isSelected={wardrobeConfig.internalLayout === 'shelves'}
                 onClick={() => updateWardrobeConfig('internalLayout', 'shelves')}
               />
               <VisualOptionCard 
                 title="Balanced / Combination" 
                 description="Mix of hanging, shelves, and drawers"
-                imageSrc={walkInImg}
+                imageSrc={balancedImg}
                 isSelected={wardrobeConfig.internalLayout === 'combination'}
                 onClick={() => updateWardrobeConfig('internalLayout', 'combination')}
               />
               <VisualOptionCard 
                 title="Drawer Heavy" 
                 description="Extra internal drawers"
-                imageSrc={wardrobe1}
+                imageSrc={drawerHeavyImg}
                 isSelected={wardrobeConfig.internalLayout === 'drawers'}
                 onClick={() => updateWardrobeConfig('internalLayout', 'drawers')}
               />
@@ -153,6 +175,7 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
             <div className="dimensions-container" style={{ maxWidth: '400px', margin: '0 auto' }}>
               <DimensionInput label="Width" value={wardrobeConfig.dimensions.width} onChange={(v) => handleDimensionChange('width', v)} />
               <DimensionInput label="Height" value={wardrobeConfig.dimensions.height} onChange={(v) => handleDimensionChange('height', v)} />
+              <DimensionInput label="Depth" value={wardrobeConfig.dimensions.depth} onChange={(v) => handleDimensionChange('depth', v)} />
             </div>
           </div>
         );
@@ -164,46 +187,89 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
             </div>
             
             <h4 style={{ marginBottom: '16px', color: 'var(--dark-espresso)' }}>Core Material</h4>
-            <div className="options-grid">
-              <VisualOptionCard 
-                title="BWP Plywood" description="Waterproof, premium core"
-                imageSrc={matteImg}
+            <div className="layout-grid-2x2">
+              <MaterialCard 
+                title="Plywood" 
+                description="Strong, durable and reliable"
+                imageSrc={plywoodImg}
+                insetSrc={plywoodImg}
                 isSelected={wardrobeConfig.coreMaterial === 'plywood'}
                 onClick={() => updateWardrobeConfig('coreMaterial', 'plywood')}
+                features={[
+                  { icon: 'shield', text: 'Strong & Durable' },
+                  { icon: 'drop', text: 'Moisture Resistant' },
+                  { icon: 'leaf', text: 'Long Lasting' }
+                ]}
               />
-              <VisualOptionCard 
-                title="HDHMR" description="Moisture resistant, durable"
-                imageSrc={matteImg}
+              <MaterialCard 
+                title="HDHMR" 
+                description="High density, more durable & moisture resistant"
+                imageSrc={hdhmrImg}
+                insetSrc={hdhmrImg}
                 isSelected={wardrobeConfig.coreMaterial === 'hdhmr'}
                 onClick={() => updateWardrobeConfig('coreMaterial', 'hdhmr')}
+                features={[
+                  { icon: 'shield', text: 'High Density' },
+                  { icon: 'drop', text: 'Moisture & Termite Resistant' },
+                  { icon: 'leaf', text: 'Smooth Finish' },
+                  { icon: 'gear', text: 'Ideal for Premium Interiors' }
+                ]}
               />
             </div>
 
             <h4 style={{ margin: '32px 0 16px', color: 'var(--dark-espresso)' }}>Shutter Finish</h4>
-            <div className="options-grid">
-              <VisualOptionCard 
-                title="Matte Laminate" description="Durable, budget-friendly"
-                imageSrc={matteImg}
+            <div className="layout-grid-2x2">
+              <MaterialCard 
+                title="Laminate" 
+                description="Stylish, durable and easy to maintain"
+                imageSrc={laminateImg}
                 isSelected={wardrobeConfig.shutterFinish === 'laminate'}
                 onClick={() => updateWardrobeConfig('shutterFinish', 'laminate')}
+                features={[
+                  { icon: 'sparkle', text: 'Wide Variety of Colors & Textures' },
+                  { icon: 'shield', text: 'Scratch Resistant' },
+                  { icon: 'drop', text: 'Easy to Clean' },
+                  { icon: 'layer', text: 'Budget Friendly' }
+                ]}
               />
-              <VisualOptionCard 
-                title="Acrylic" description="Smooth, reflective gloss"
+              <MaterialCard 
+                title="Veneer" 
+                description="Natural wood beauty with a premium look"
+                imageSrc={veneerImg}
+                isSelected={wardrobeConfig.shutterFinish === 'veneer'}
+                onClick={() => updateWardrobeConfig('shutterFinish', 'veneer')}
+                features={[
+                  { icon: 'leaf', text: 'Natural Wood Look' },
+                  { icon: 'diamond', text: 'Premium Appearance' },
+                  { icon: 'leaf', text: 'Unique Grain Patterns' },
+                  { icon: 'sparkle', text: 'Elegant & Timeless' }
+                ]}
+              />
+              <MaterialCard 
+                title="PU Finish" 
+                description="Luxurious look with long lasting finish"
+                imageSrc={puImg}
+                isSelected={wardrobeConfig.shutterFinish === 'pu'}
+                onClick={() => updateWardrobeConfig('shutterFinish', 'pu')}
+                features={[
+                  { icon: 'sparkle', text: 'Smooth & Glossy Finish' },
+                  { icon: 'shield', text: 'Scratch Resistant' },
+                  { icon: 'drop', text: 'Water Resistant' },
+                  { icon: 'layer', text: 'Available in Matte, Gloss & High Gloss' }
+                ]}
+              />
+              <MaterialCard 
+                title="Acrylic" 
+                description="High gloss, modern look, and easy to clean"
                 imageSrc={acrylicImg}
                 isSelected={wardrobeConfig.shutterFinish === 'acrylic'}
                 onClick={() => updateWardrobeConfig('shutterFinish', 'acrylic')}
-              />
-              <VisualOptionCard 
-                title="Veneer" description="Natural wood character"
-                imageSrc={wardrobe1}
-                isSelected={wardrobeConfig.shutterFinish === 'veneer'}
-                onClick={() => updateWardrobeConfig('shutterFinish', 'veneer')}
-              />
-              <VisualOptionCard 
-                title="Glass / Mirror" description="Profile frames with glass"
-                imageSrc={wardrobe1}
-                isSelected={wardrobeConfig.shutterFinish === 'glass'}
-                onClick={() => updateWardrobeConfig('shutterFinish', 'glass')}
+                features={[
+                  { icon: 'sparkle', text: 'High Gloss Finish' },
+                  { icon: 'shield', text: 'Scratch Resistant' },
+                  { icon: 'drop', text: 'Moisture Resistant' },
+                  { icon: 'layer', text: 'Vibrant Colors' }
+                ]}
               />
             </div>
           </div>
@@ -212,50 +278,52 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
         return (
           <div className="step-content">
             <div className="step-header">
-              <h2 className="step-title">Accessories & Package</h2>
+              <h2 className="step-title">Optional Accessories</h2>
+              <p className="step-subtitle">Enhance your wardrobe with smart accessories</p>
             </div>
             
-            <h4 style={{ marginBottom: '16px', color: 'var(--dark-espresso)' }}>Optional Accessories</h4>
             <div className="options-grid" style={{ marginBottom: '40px' }}>
               <VisualOptionCard 
                 title="Pull-down Hanger"
-                imageSrc={wardrobe1}
+                description="Easily access high storage space"
+                imageSrc={pullDownImg}
                 isSelected={wardrobeConfig.accessories.includes('pullDown')}
                 onClick={() => handleAccessoryToggle('pullDown')}
               />
               <VisualOptionCard 
                 title="Jewellery Drawer"
-                imageSrc={wardrobe1}
+                description="Organized storage for your valuables"
+                imageSrc={jewelleryImg}
                 isSelected={wardrobeConfig.accessories.includes('jewellery')}
                 onClick={() => handleAccessoryToggle('jewellery')}
               />
               <VisualOptionCard 
                 title="Internal Lighting"
-                imageSrc={walkInImg}
+                description="Better visibility with elegant lighting"
+                imageSrc={lightingImg}
                 isSelected={wardrobeConfig.accessories.includes('lighting')}
                 onClick={() => handleAccessoryToggle('lighting')}
               />
-            </div>
-
-            <h4 style={{ marginBottom: '16px', color: 'var(--dark-espresso)' }}>Design Level</h4>
-            <div className="options-grid">
               <VisualOptionCard 
-                title="Essential" description="Smart & Practical" isPackageCard={true}
-                imageSrc={matteImg}
-                isSelected={wardrobeConfig.package === 'essential'}
-                onClick={() => updateWardrobeConfig('package', 'essential')}
+                title="Mirror"
+                description="Full-length mirror for your convenience"
+                imageSrc={mirrorImg}
+                isSelected={wardrobeConfig.accessories.includes('mirror')}
+                onClick={() => handleAccessoryToggle('mirror')}
               />
               <VisualOptionCard 
-                title="Premium" description="Elegant & Enhanced" isPackageCard={true}
-                imageSrc={wardrobe1}
-                isSelected={wardrobeConfig.package === 'premium'}
-                onClick={() => updateWardrobeConfig('package', 'premium')}
+                title="Soft-close Hardware"
+                description="Smooth and silent closing"
+                imageSrc={softCloseImg}
+                isSelected={wardrobeConfig.accessories.includes('softClose')}
+                onClick={() => handleAccessoryToggle('softClose')}
               />
               <VisualOptionCard 
-                title="Luxury" description="Statement & Bespoke" isPackageCard={true}
-                imageSrc={wardrobe1}
-                isSelected={wardrobeConfig.package === 'luxury'}
-                onClick={() => updateWardrobeConfig('package', 'luxury')}
+                title="Trouser Rack"
+                description="Keep your trousers neat and organized"
+                imageSrc={trouserRackImg}
+                isSelected={wardrobeConfig.accessories.includes('trouserRack')}
+                onClick={() => handleAccessoryToggle('trouserRack')}
               />
             </div>
           </div>

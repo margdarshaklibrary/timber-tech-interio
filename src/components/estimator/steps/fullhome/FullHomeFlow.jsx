@@ -5,11 +5,34 @@ import VisualOptionCard from '../../VisualOptionCard';
 import LargeVisualCard from '../../LargeVisualCard';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 
-import livingImg1 from '../../../../assets/projects/living-room-1.webp';
-import bedroomImg1 from '../../../../assets/projects/bedroom-1.webp';
-import wardrobeImg1 from '../../../../assets/projects/wardrobe-1.webp';
-import lobbyImg1 from '../../../../assets/projects/lobby-1.webp';
-import matteImg from '../../../../assets/estimator/finish_matte_laminate_1789802016310.png';
+// Rooms
+import livingRoomImg from '../../../../assets/estimator/living-room.png';
+import kitchenImg from '../../../../assets/estimator/kitchen.png';
+import masterBedroomImg from '../../../../assets/estimator/master-bedroom.png';
+import bedroom2Img from '../../../../assets/estimator/bedroom2.png';
+import bedroom3Img from '../../../../assets/estimator/bedroom3.png';
+import diningImg from '../../../../assets/estimator/dining-areas.png';
+import studyImg from '../../../../assets/estimator/studyoffice.png';
+
+// Property
+import oneBhkImg from '../../../../assets/estimator/1bhk.png';
+import twoBhkImg from '../../../../assets/estimator/2bhk.png';
+import threeBhkImg from '../../../../assets/estimator/3bhk.png';
+import fourBhkImg from '../../../../assets/estimator/4bhk.png';
+import villaImg from '../../../../assets/estimator/villa.png';
+
+// Packages
+import essentialImg from '../../../../assets/estimator/essential.png';
+import premiumImg from '../../../../assets/estimator/premium.png';
+import smartLuxuryImg from '../../../../assets/estimator/smart-luxury.png';
+import luxuryImg from '../../../../assets/estimator/luxury.png';
+
+// Additions
+import falseCeilingImg from '../../../../assets/estimator/false-calling.png';
+import lightingImg from '../../../../assets/estimator/decorative-lightning.png';
+import paintingImg from '../../../../assets/estimator/wellpainting or texture.png';
+import curtainsImg from '../../../../assets/estimator/curtains.png';
+import sofasImg from '../../../../assets/estimator/sofas and beds.png';
 
 const FULL_HOME_STEPS = [
   'Rooms',
@@ -96,7 +119,15 @@ const FullHomeFlow = ({ onComplete, onBackToCategory }) => {
                 <VisualOptionCard 
                   key={room.id}
                   title={room.label}
-                  imageSrc={room.id === 'living' || room.id === 'dining' ? livingImg1 : room.id === 'kitchen' ? lobbyImg1 : bedroomImg1}
+                  imageSrc={
+                    room.id === 'living' ? livingRoomImg :
+                    room.id === 'kitchen' ? kitchenImg :
+                    room.id === 'master_bed' ? masterBedroomImg :
+                    room.id === 'bedroom_2' ? bedroom2Img :
+                    room.id === 'bedroom_3' ? bedroom3Img :
+                    room.id === 'dining' ? diningImg :
+                    studyImg
+                  }
                   isSelected={fullHomeConfig.rooms.includes(room.id)}
                   onClick={() => handleRoomToggle(room.id)}
                 />
@@ -115,7 +146,13 @@ const FullHomeFlow = ({ onComplete, onBackToCategory }) => {
                 <VisualOptionCard 
                   key={type}
                   title={type}
-                  imageSrc={lobbyImg1}
+                  imageSrc={
+                    type === '1 BHK' ? oneBhkImg :
+                    type === '2 BHK' ? twoBhkImg :
+                    type === '3 BHK' ? threeBhkImg :
+                    type === '4 BHK+' ? fourBhkImg :
+                    villaImg
+                  }
                   isSelected={fullHomeConfig.propertyType === type.toLowerCase().replace(' ', '')}
                   onClick={() => updateFullHomeConfig('propertyType', type.toLowerCase().replace(' ', ''))}
                 />
@@ -170,26 +207,26 @@ const FullHomeFlow = ({ onComplete, onBackToCategory }) => {
             <div className="options-grid">
               <VisualOptionCard 
                 title="Essential" description="Smart & Practical" isPackageCard={true}
-                imageSrc={matteImg}
+                imageSrc={essentialImg}
                 isSelected={fullHomeConfig.package === 'essential'}
                 onClick={() => updateFullHomeConfig('package', 'essential')}
               />
               <VisualOptionCard 
                 title="Premium" description="Elegant & Enhanced" isPackageCard={true}
-                imageSrc={bedroomImg1}
+                imageSrc={premiumImg}
                 isSelected={fullHomeConfig.package === 'premium'}
                 onClick={() => updateFullHomeConfig('package', 'premium')}
               />
               <VisualOptionCard 
                 title="Smart Luxury" description="Luxury Look, Controlled Budget" isPackageCard={true}
                 badge="Recommended"
-                imageSrc={wardrobeImg1}
+                imageSrc={smartLuxuryImg}
                 isSelected={fullHomeConfig.package === 'smart_luxury'}
                 onClick={() => updateFullHomeConfig('package', 'smart_luxury')}
               />
               <VisualOptionCard 
                 title="Luxury" description="Statement & Bespoke" isPackageCard={true}
-                imageSrc={lobbyImg1}
+                imageSrc={luxuryImg}
                 isSelected={fullHomeConfig.package === 'luxury'}
                 onClick={() => updateFullHomeConfig('package', 'luxury')}
               />
@@ -214,7 +251,13 @@ const FullHomeFlow = ({ onComplete, onBackToCategory }) => {
                 <VisualOptionCard 
                   key={add.id}
                   title={add.label}
-                  imageSrc={livingImg1}
+                  imageSrc={
+                    add.id === 'false_ceiling' ? falseCeilingImg :
+                    add.id === 'lighting' ? lightingImg :
+                    add.id === 'painting' ? paintingImg :
+                    add.id === 'curtains' ? curtainsImg :
+                    sofasImg
+                  }
                   isSelected={fullHomeConfig.additions.includes(add.id)}
                   onClick={() => handleAdditionToggle(add.id)}
                 />

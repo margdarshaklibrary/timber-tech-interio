@@ -6,16 +6,23 @@ import LargeVisualCard from '../../LargeVisualCard';
 import DimensionInput from '../../DimensionInput';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-import officeImg1 from '../../../../assets/projects/office-1.webp';
-import showroomImg1 from '../../../../assets/projects/showroom-1.webp';
-import matteImg from '../../../../assets/estimator/finish_matte_laminate_1789802016310.png';
+// New Scope Images
+
+// New Scope Images
+import workstationImg from '../../../../assets/estimator/workstation.png';
+import managerCabinImg from '../../../../assets/estimator/manager or director cabin.png';
+import meetingRoomImg from '../../../../assets/estimator/meeting or conference room.png';
+import completeOfficeImg from '../../../../assets/estimator/complete office.png';
+
+// New Material & Finish Images
+import hdhmrLaminateImg from '../../../../assets/estimator/HDHMR+Laminate.png';
+import plywoodVeneerImg from '../../../../assets/estimator/plywood+venner.png';
 
 const OFFICE_STEPS = [
   'Scope',
   'Layout & Seats',
   'Area',
-  'Material & Finish',
-  'Package'
+  'Material & Finish'
 ];
 
 const OfficeFlow = ({ onComplete, onBackToCategory }) => {
@@ -56,25 +63,25 @@ const OfficeFlow = ({ onComplete, onBackToCategory }) => {
             <div className="layout-grid">
               <LargeVisualCard 
                 title="Workstations" 
-                imageSrc={officeImg1}
+                imageSrc={workstationImg}
                 isSelected={officeConfig.scope === 'workstation'}
                 onClick={() => updateOfficeConfig('scope', 'workstation')}
               />
               <LargeVisualCard 
                 title="Manager / Director Cabin" 
-                imageSrc={showroomImg1}
+                imageSrc={managerCabinImg}
                 isSelected={officeConfig.scope === 'cabin'}
                 onClick={() => updateOfficeConfig('scope', 'cabin')}
               />
               <LargeVisualCard 
                 title="Meeting / Conference Room" 
-                imageSrc={officeImg1}
+                imageSrc={meetingRoomImg}
                 isSelected={officeConfig.scope === 'meeting'}
                 onClick={() => updateOfficeConfig('scope', 'meeting')}
               />
               <LargeVisualCard 
                 title="Complete Office" 
-                imageSrc={officeImg1}
+                imageSrc={completeOfficeImg}
                 isSelected={officeConfig.scope === 'complete'}
                 onClick={() => updateOfficeConfig('scope', 'complete')}
               />
@@ -95,7 +102,7 @@ const OfficeFlow = ({ onComplete, onBackToCategory }) => {
                     <VisualOptionCard 
                       key={num}
                       title={`${num} Seats`}
-                      imageSrc={officeImg1}
+                      imageSrc={workstationImg}
                       isSelected={officeConfig.seats === num}
                       onClick={() => updateOfficeConfig('seats', num)}
                     />
@@ -135,7 +142,7 @@ const OfficeFlow = ({ onComplete, onBackToCategory }) => {
               <VisualOptionCard 
                 title="HDHMR + Laminate"
                 description="Durable standard for offices"
-                imageSrc={matteImg}
+                imageSrc={hdhmrLaminateImg}
                 isSelected={officeConfig.coreMaterial === 'hdhmr' && officeConfig.shutterFinish === 'laminate'}
                 onClick={() => {
                   updateOfficeConfig('coreMaterial', 'hdhmr');
@@ -145,34 +152,12 @@ const OfficeFlow = ({ onComplete, onBackToCategory }) => {
               <VisualOptionCard 
                 title="Plywood + Veneer"
                 description="Premium for cabins"
-                imageSrc={officeImg1}
+                imageSrc={plywoodVeneerImg}
                 isSelected={officeConfig.coreMaterial === 'plywood' && officeConfig.shutterFinish === 'veneer'}
                 onClick={() => {
                   updateOfficeConfig('coreMaterial', 'plywood');
                   updateOfficeConfig('shutterFinish', 'veneer');
                 }}
-              />
-            </div>
-          </div>
-        );
-      case 5:
-        return (
-          <div className="step-content">
-            <div className="step-header">
-              <h2 className="step-title">Design Level</h2>
-            </div>
-            <div className="options-grid">
-              <VisualOptionCard 
-                title="Essential" description="Smart & Practical" isPackageCard={true}
-                imageSrc={matteImg}
-                isSelected={officeConfig.package === 'essential'}
-                onClick={() => updateOfficeConfig('package', 'essential')}
-              />
-              <VisualOptionCard 
-                title="Premium" description="Elegant & Enhanced" isPackageCard={true}
-                imageSrc={officeImg1}
-                isSelected={officeConfig.package === 'premium'}
-                onClick={() => updateOfficeConfig('package', 'premium')}
               />
             </div>
           </div>
