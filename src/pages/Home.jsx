@@ -53,6 +53,57 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Plan Your Space Section */}
+      <section className="plan-space-section section-padding">
+        <div className="container">
+          <SectionTitle 
+            eyebrow="PLAN YOUR SPACE"
+            title="Get an Estimate for Your Interior"
+            subtitle="Explore your options, choose your style and get an indicative cost for your space."
+            centered={true}
+          />
+          <div className="category-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '30px',
+            marginTop: '40px'
+          }}>
+            {[
+              { id: 'kitchen', name: 'Modular Kitchen', desc: 'Custom cabinets & layouts' },
+              { id: 'wardrobe', name: 'Wardrobe', desc: 'Storage & closet solutions' },
+              { id: 'living', name: 'Living Room', desc: 'TV units & display cabinets' },
+              { id: 'bedroom', name: 'Bedroom', desc: 'Beds, side tables & more' },
+              { id: 'office', name: 'Office / Workspace', desc: 'Workstations & storage' },
+              { id: 'full-home', name: 'Full Home Interiors', desc: 'Complete end-to-end design' }
+            ].map((cat) => (
+              <div key={cat.id} className="category-card" style={{
+                border: '1px solid var(--border-light)',
+                borderRadius: '8px',
+                padding: '30px',
+                textAlign: 'center',
+                backgroundColor: 'var(--white)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '24px', color: 'var(--dark-espresso)', marginBottom: '8px' }}>{cat.name}</h3>
+                <p style={{ color: '#666', marginBottom: '24px', fontSize: '14px' }}>{cat.desc}</p>
+                <Link 
+                  to="/estimator" 
+                  className="btn btn-outline-dark"
+                  onClick={() => localStorage.setItem('selectedEstimatorCategory', cat.id)} 
+                  style={{ width: '100%' }}
+                >
+                  Calculate Estimate
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Core Services Features */}
       <section ref={sectionRef} className={`stats-section ${isVisible ? 'fade-in-visible' : ''}`}>
         <div className="container">
