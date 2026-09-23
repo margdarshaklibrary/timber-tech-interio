@@ -5,8 +5,16 @@ import ServiceCard from '../components/ServiceCard';
 import { services } from '../data/services';
 import { testimonials } from '../data/testimonials';
 import { ArrowRight, ShieldCheck, PenTool, HeartHandshake, Home as HomeIcon, Building2, Sofa, LayoutGrid } from 'lucide-react';
+import workshopImg from '../assets/images/workshop.png';
 import '../styles/Home.css';
-import workshopImg from '../assets/images/workshop.jpg';
+
+// Import project images for category cards
+import kitchenImg from '../assets/gallery/kitchen/modular-kitchenImage.jpg';
+import wardrobeImg from '../assets/gallery/wardrobe/wardrobe.jpg';
+import livingImg from '../assets/projects/living-room-1.webp';
+import bedroomImg from '../assets/projects/bedroom-1.webp';
+import officeImg from '../assets/gallery/office/office-or-workflow.jpg';
+import fullHomeImg from '../assets/images/fullhome-interior.png';
 
 const Home = () => {
   // Show only 3 services for preview
@@ -62,42 +70,32 @@ const Home = () => {
             subtitle="Explore your options, choose your style and get an indicative cost for your space."
             centered={true}
           />
-          <div className="category-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '30px',
-            marginTop: '40px'
-          }}>
+          <div className="estimator-category-grid">
             {[
-              { id: 'kitchen', name: 'Modular Kitchen', desc: 'Custom cabinets & layouts' },
-              { id: 'wardrobe', name: 'Wardrobe', desc: 'Storage & closet solutions' },
-              { id: 'living', name: 'Living Room', desc: 'TV units & display cabinets' },
-              { id: 'bedroom', name: 'Bedroom', desc: 'Beds, side tables & more' },
-              { id: 'office', name: 'Office / Workspace', desc: 'Workstations & storage' },
-              { id: 'full-home', name: 'Full Home Interiors', desc: 'Complete end-to-end design' }
+              { id: 'kitchen', name: 'Modular Kitchen', desc: 'Custom cabinets & layouts', img: kitchenImg },
+              { id: 'wardrobe', name: 'Wardrobe', desc: 'Storage & closet solutions', img: wardrobeImg },
+              { id: 'living', name: 'Living Room', desc: 'TV units & display cabinets', img: livingImg },
+              { id: 'bedroom', name: 'Bedroom', desc: 'Beds, side tables & more', img: bedroomImg },
+              { id: 'office', name: 'Office / Workspace', desc: 'Workstations & storage', img: officeImg },
+              { id: 'full-home', name: 'Full Home Interiors', desc: 'Complete end-to-end design', img: fullHomeImg }
             ].map((cat) => (
-              <div key={cat.id} className="category-card" style={{
-                border: '1px solid var(--border-light)',
-                borderRadius: '8px',
-                padding: '30px',
-                textAlign: 'center',
-                backgroundColor: 'var(--white)',
-                transition: 'all 0.3s ease',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '24px', color: 'var(--dark-espresso)', marginBottom: '8px' }}>{cat.name}</h3>
-                <p style={{ color: '#666', marginBottom: '24px', fontSize: '14px' }}>{cat.desc}</p>
-                <Link 
-                  to="/estimator" 
-                  className="btn btn-outline-dark"
-                  onClick={() => localStorage.setItem('selectedEstimatorCategory', cat.id)} 
-                  style={{ width: '100%' }}
-                >
-                  Calculate Estimate
-                </Link>
+              <div key={cat.id} className="estimator-category-card">
+                <div 
+                  className="estimator-category-bg" 
+                  style={{ backgroundImage: `url(${cat.img})` }}
+                ></div>
+                <div className="estimator-category-overlay"></div>
+                <div className="estimator-category-content">
+                  <h3 className="estimator-category-title">{cat.name}</h3>
+                  <p className="estimator-category-desc">{cat.desc}</p>
+                  <Link 
+                    to="/estimator" 
+                    className="btn estimator-category-btn"
+                    onClick={() => localStorage.setItem('selectedEstimatorCategory', cat.id)} 
+                  >
+                    Calculate Estimate <ArrowRight size={18} className="btn-icon-right" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
