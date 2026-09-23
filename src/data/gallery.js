@@ -1,13 +1,13 @@
-import living1 from '../assets/projects/living-room-1.webp';
+import living1 from '../assets/projects/new_project_1.png';
 import living2 from '../assets/gallery/living-room/living-room-2.webp';
-import bed1 from '../assets/projects/bedroom-1.webp';
+import bed1 from '../assets/projects/new_project_2.jpg';
 import bed2 from '../assets/gallery/bedroom/bedroom-3.webp';
 import kitchen1 from '../assets/gallery/kitchen/modular-kitchenImage.jpg';
 import wardrobe1 from '../assets/projects/wardrobe-1.webp';
 import wardrobe2 from '../assets/gallery/wardrobe/wardrobe.jpg';
 import office1 from '../assets/projects/office-1.webp';
 import office2 from '../assets/gallery/office/office-or-workflow.jpg';
-import showroom1 from '../assets/projects/showroom-1.webp';
+import showroom1 from '../assets/projects/new_project_2.jpg';
 import dining1 from '../assets/estimator/dining-areas.png';
 import workshop1 from '../assets/images/workshop.png';
 

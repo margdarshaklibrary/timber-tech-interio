@@ -32,7 +32,7 @@ import laminateImg from '../../../../assets/estimator/Laminate.png';
 import veneerImg from '../../../../assets/estimator/Veneer.png';
 import puImg from '../../../../assets/estimator/PU Finish.png';
 
-import bedProjectImg from '../../../../assets/projects/bedroom-1.webp';
+import bedProjectImg from '../../../../assets/projects/new_project_2.jpg';
 import wardrobeImg from '../../../../assets/projects/wardrobe-1.webp';
 import matteImg from '../../../../assets/estimator/finish_matte_laminate_1789802016310.png';
 import acrylicImg from '../../../../assets/estimator/finish_glossy_acrylic_1789802033831.png';

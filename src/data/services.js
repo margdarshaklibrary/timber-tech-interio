@@ -1,5 +1,5 @@
-import livingRoom from '../assets/projects/living-room-1.webp';
-import bedroom from '../assets/projects/bedroom-1.webp';
+import livingRoom from '../assets/projects/new_project_1.png';
+import bedroom from '../assets/projects/new_project_2.jpg';
 import kitchen from '../assets/gallery/kitchen/modular-kitchenImage.jpg';
 import wardrobe from '../assets/gallery/wardrobe/wardrobe.jpg';
 import dining from '../assets/estimator/dining-areas.png';

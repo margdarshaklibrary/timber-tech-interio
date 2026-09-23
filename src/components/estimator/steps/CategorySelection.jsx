@@ -4,8 +4,8 @@ import { ArrowRight } from 'lucide-react';
 
 import kitchenImg from '../../../assets/gallery/kitchen/modular-kitchenImage.jpg';
 import wardrobeImg from '../../../assets/gallery/wardrobe/wardrobe.jpg';
-import livingImg from '../../../assets/projects/living-room-1.webp';
-import bedroomImg from '../../../assets/projects/bedroom-1.webp';
+import livingImg from '../../../assets/projects/new_project_1.png';
+import bedroomImg from '../../../assets/projects/new_project_2.jpg';
 import officeImg from '../../../assets/gallery/office/office-or-workflow.jpg';
 import fullHomeImg from '../../../assets/images/fullhome-interior.png';
 
