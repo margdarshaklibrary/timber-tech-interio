@@ -6,33 +6,35 @@ import LargeVisualCard from '../../LargeVisualCard';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 
 // Rooms
-import livingRoomImg from '../../../../assets/estimator/living-room.png';
-import kitchenImg from '../../../../assets/estimator/kitchen.png';
-import masterBedroomImg from '../../../../assets/estimator/master-bedroom.png';
-import bedroom2Img from '../../../../assets/estimator/bedroom2.png';
-import bedroom3Img from '../../../../assets/estimator/bedroom3.png';
-import diningImg from '../../../../assets/estimator/dining-areas.png';
-import studyImg from '../../../../assets/estimator/studyoffice.png';
+
+
+
+
+
+
+
 
 // Property
-import oneBhkImg from '../../../../assets/estimator/1bhk.png';
-import twoBhkImg from '../../../../assets/estimator/2bhk.png';
-import threeBhkImg from '../../../../assets/estimator/3bhk.png';
-import fourBhkImg from '../../../../assets/estimator/4bhk.png';
-import villaImg from '../../../../assets/estimator/villa.png';
+
+
+
+
+
 
 // Packages
-import essentialImg from '../../../../assets/estimator/essential.png';
-import premiumImg from '../../../../assets/estimator/premium.png';
-import smartLuxuryImg from '../../../../assets/estimator/smart-luxury.png';
-import luxuryImg from '../../../../assets/estimator/luxury.png';
+
+
+
+
 
 // Additions
-import falseCeilingImg from '../../../../assets/estimator/false-calling.png';
-import lightingImg from '../../../../assets/estimator/decorative-lightning.png';
-import paintingImg from '../../../../assets/estimator/wellpainting or texture.png';
-import curtainsImg from '../../../../assets/estimator/curtains.png';
-import sofasImg from '../../../../assets/estimator/sofas and beds.png';
+
+
+
+
+
+import { getImgUrl } from '../../../../utils/cloudinary';
+
 
 const FULL_HOME_STEPS = [
   'Rooms',
@@ -207,26 +209,26 @@ const FullHomeFlow = ({ onComplete, onBackToCategory }) => {
             <div className="options-grid">
               <VisualOptionCard 
                 title="Essential" description="Smart & Practical" isPackageCard={true}
-                imageSrc={essentialImg}
+                imageSrc={getImgUrl("est-pkg-essential")}
                 isSelected={fullHomeConfig.package === 'essential'}
                 onClick={() => updateFullHomeConfig('package', 'essential')}
               />
               <VisualOptionCard 
                 title="Premium" description="Elegant & Enhanced" isPackageCard={true}
-                imageSrc={premiumImg}
+                imageSrc={getImgUrl("est-pkg-premium")}
                 isSelected={fullHomeConfig.package === 'premium'}
                 onClick={() => updateFullHomeConfig('package', 'premium')}
               />
               <VisualOptionCard 
                 title="Smart Luxury" description="Luxury Look, Controlled Budget" isPackageCard={true}
                 badge="Recommended"
-                imageSrc={smartLuxuryImg}
+                imageSrc={getImgUrl("est-pkg-smart-luxury")}
                 isSelected={fullHomeConfig.package === 'smart_luxury'}
                 onClick={() => updateFullHomeConfig('package', 'smart_luxury')}
               />
               <VisualOptionCard 
                 title="Luxury" description="Statement & Bespoke" isPackageCard={true}
-                imageSrc={luxuryImg}
+                imageSrc={getImgUrl("est-pkg-luxury")}
                 isSelected={fullHomeConfig.package === 'luxury'}
                 onClick={() => updateFullHomeConfig('package', 'luxury')}
               />

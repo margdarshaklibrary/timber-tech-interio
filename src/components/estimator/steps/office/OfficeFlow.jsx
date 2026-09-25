@@ -5,18 +5,11 @@ import VisualOptionCard from '../../VisualOptionCard';
 import LargeVisualCard from '../../LargeVisualCard';
 import DimensionInput from '../../DimensionInput';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-
-// New Scope Images
-
-// New Scope Images
-import workstationImg from '../../../../assets/estimator/workstation.png';
-import managerCabinImg from '../../../../assets/estimator/manager or director cabin.png';
-import meetingRoomImg from '../../../../assets/estimator/meeting or conference room.png';
-import completeOfficeImg from '../../../../assets/estimator/complete office.png';
-
 // New Material & Finish Images
-import hdhmrLaminateImg from '../../../../assets/estimator/HDHMR+Laminate.png';
-import plywoodVeneerImg from '../../../../assets/estimator/plywood+venner.png';
+
+
+import { getImgUrl } from '../../../../utils/cloudinary';
+
 
 const OFFICE_STEPS = [
   'Scope',
@@ -63,25 +56,25 @@ const OfficeFlow = ({ onComplete, onBackToCategory }) => {
             <div className="layout-grid">
               <LargeVisualCard 
                 title="Workstations" 
-                imageSrc={workstationImg}
+                imageSrc={getImgUrl("est-off-workstation")}
                 isSelected={officeConfig.scope === 'workstation'}
                 onClick={() => updateOfficeConfig('scope', 'workstation')}
               />
               <LargeVisualCard 
                 title="Manager / Director Cabin" 
-                imageSrc={managerCabinImg}
+                imageSrc={getImgUrl("est-off-manager-cabin")}
                 isSelected={officeConfig.scope === 'cabin'}
                 onClick={() => updateOfficeConfig('scope', 'cabin')}
               />
               <LargeVisualCard 
                 title="Meeting / Conference Room" 
-                imageSrc={meetingRoomImg}
+                imageSrc={getImgUrl("est-off-meeting-room")}
                 isSelected={officeConfig.scope === 'meeting'}
                 onClick={() => updateOfficeConfig('scope', 'meeting')}
               />
               <LargeVisualCard 
                 title="Complete Office" 
-                imageSrc={completeOfficeImg}
+                imageSrc={getImgUrl("est-off-complete")}
                 isSelected={officeConfig.scope === 'complete'}
                 onClick={() => updateOfficeConfig('scope', 'complete')}
               />
@@ -102,7 +95,7 @@ const OfficeFlow = ({ onComplete, onBackToCategory }) => {
                     <VisualOptionCard 
                       key={num}
                       title={`${num} Seats`}
-                      imageSrc={workstationImg}
+                      imageSrc={getImgUrl("est-off-workstation")}
                       isSelected={officeConfig.seats === num}
                       onClick={() => updateOfficeConfig('seats', num)}
                     />
@@ -142,7 +135,7 @@ const OfficeFlow = ({ onComplete, onBackToCategory }) => {
               <VisualOptionCard 
                 title="HDHMR + Laminate"
                 description="Durable standard for offices"
-                imageSrc={hdhmrLaminateImg}
+                imageSrc={getImgUrl("est-mat-hdhmr-laminate")}
                 isSelected={officeConfig.coreMaterial === 'hdhmr' && officeConfig.shutterFinish === 'laminate'}
                 onClick={() => {
                   updateOfficeConfig('coreMaterial', 'hdhmr');
@@ -152,7 +145,7 @@ const OfficeFlow = ({ onComplete, onBackToCategory }) => {
               <VisualOptionCard 
                 title="Plywood + Veneer"
                 description="Premium for cabins"
-                imageSrc={plywoodVeneerImg}
+                imageSrc={getImgUrl("est-mat-plywood-veneer")}
                 isSelected={officeConfig.coreMaterial === 'plywood' && officeConfig.shutterFinish === 'veneer'}
                 onClick={() => {
                   updateOfficeConfig('coreMaterial', 'plywood');

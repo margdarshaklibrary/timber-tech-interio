@@ -6,30 +6,32 @@ import LargeVisualCard from '../../LargeVisualCard';
 import DimensionInput from '../../DimensionInput';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-import tvBaseImg from '../../../../assets/estimator/TV unit (base only).png';
-import tvFullImg from '../../../../assets/estimator/Full wall TV Unit.png';
-import storageImg from '../../../../assets/estimator/Display or storage unit.png';
-import panelingImg from '../../../../assets/estimator/wall panelling.png';
+
+
+
+
 
 import MaterialCard from '../../MaterialCard';
 
-import plywoodImg from '../../../../assets/estimator/plywood.png';
-import hdhmrImg from '../../../../assets/estimator/HDHMR.png';
-import laminateImg from '../../../../assets/estimator/Laminate.png';
-import veneerImg from '../../../../assets/estimator/Veneer.png';
-import puImg from '../../../../assets/estimator/PU Finish.png';
+
+
+
+
+
 
 // New Layout & Storage Images
-import baseStorageImg from '../../../../assets/estimator/base-cabinet.png';
-import wallStorageImg from '../../../../assets/estimator/wall-cabinet.png';
-import openShelvesImg from '../../../../assets/estimator/open-shelves.png';
-import drawersImg from '../../../../assets/estimator/drawers.png';
+
+
+
+
 
 // New Accessories & Accents Images
-import flutedPanelImg from '../../../../assets/estimator/fluted-panel.png';
-import backlightingImg from '../../../../assets/estimator/backlightning.png';
-import cableManagementImg from '../../../../assets/estimator/cable-management.png';
-import handlelessImg from '../../../../assets/estimator/handless or push-to-open.png';
+
+
+
+
+import { getImgUrl } from '../../../../utils/cloudinary';
+
 
 const LIVING_STEPS = [
   'Scope',
@@ -101,28 +103,28 @@ const LivingRoomFlow = ({ onComplete, onBackToCategory }) => {
             <div className="layout-grid-2x2">
               <LargeVisualCard 
                 title="TV Unit (Base only)" 
-                imageSrc={tvBaseImg}
+                imageSrc={getImgUrl("est-tv-base-only")}
                 isWide={true}
                 isSelected={livingRoomConfig.scope === 'tv-base'}
                 onClick={() => updateLivingRoomConfig('scope', 'tv-base')}
               />
               <LargeVisualCard 
                 title="Full Wall TV Unit" 
-                imageSrc={tvFullImg}
+                imageSrc={getImgUrl("est-tv-full-wall")}
                 isWide={true}
                 isSelected={livingRoomConfig.scope === 'tv-full'}
                 onClick={() => updateLivingRoomConfig('scope', 'tv-full')}
               />
               <LargeVisualCard 
                 title="Display / Storage Unit" 
-                imageSrc={storageImg}
+                imageSrc={getImgUrl("est-liv-display-storage")}
                 isWide={true}
                 isSelected={livingRoomConfig.scope === 'storage'}
                 onClick={() => updateLivingRoomConfig('scope', 'storage')}
               />
               <LargeVisualCard 
                 title="Wall Paneling" 
-                imageSrc={panelingImg}
+                imageSrc={getImgUrl("est-wall-paneling")}
                 isWide={true}
                 isSelected={livingRoomConfig.scope === 'paneling'}
                 onClick={() => updateLivingRoomConfig('scope', 'paneling')}
@@ -141,28 +143,28 @@ const LivingRoomFlow = ({ onComplete, onBackToCategory }) => {
               <VisualOptionCard 
                 title="Base Cabinets" 
                 description="Storage below the TV"
-                imageSrc={baseStorageImg}
+                imageSrc={getImgUrl("est-tv-base-cabinet")}
                 isSelected={livingRoomConfig.storage.includes('base')}
                 onClick={() => handleStorageToggle('base')}
               />
               <VisualOptionCard 
                 title="Wall Cabinets" 
                 description="Closed storage above or beside TV"
-                imageSrc={wallStorageImg}
+                imageSrc={getImgUrl("est-tv-wall-cabinet")}
                 isSelected={livingRoomConfig.storage.includes('wall')}
                 onClick={() => handleStorageToggle('wall')}
               />
               <VisualOptionCard 
                 title="Open Shelves" 
                 description="Display shelves for books or decor"
-                imageSrc={openShelvesImg}
+                imageSrc={getImgUrl("est-tv-open-shelves")}
                 isSelected={livingRoomConfig.storage.includes('shelves')}
                 onClick={() => handleStorageToggle('shelves')}
               />
               <VisualOptionCard 
                 title="Drawers" 
                 description="Concealed storage for accessories"
-                imageSrc={drawersImg}
+                imageSrc={getImgUrl("est-tv-drawers")}
                 isSelected={livingRoomConfig.storage.includes('drawers')}
                 onClick={() => handleStorageToggle('drawers')}
               />
@@ -196,8 +198,8 @@ const LivingRoomFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Plywood" 
                 description="Strong, durable and reliable"
-                imageSrc={plywoodImg}
-                insetSrc={plywoodImg}
+                imageSrc={getImgUrl("est-mat-plywood")}
+                insetSrc={getImgUrl("est-mat-plywood")}
                 isSelected={livingRoomConfig.coreMaterial === 'plywood'}
                 onClick={() => updateLivingRoomConfig('coreMaterial', 'plywood')}
                 features={[
@@ -209,8 +211,8 @@ const LivingRoomFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="HDHMR" 
                 description="High density, more durable & moisture resistant"
-                imageSrc={hdhmrImg}
-                insetSrc={hdhmrImg}
+                imageSrc={getImgUrl("est-mat-hdhmr")}
+                insetSrc={getImgUrl("est-mat-hdhmr")}
                 isSelected={livingRoomConfig.coreMaterial === 'hdhmr'}
                 onClick={() => updateLivingRoomConfig('coreMaterial', 'hdhmr')}
                 features={[
@@ -227,7 +229,7 @@ const LivingRoomFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Laminate" 
                 description="Stylish, durable and easy to maintain"
-                imageSrc={laminateImg}
+                imageSrc={getImgUrl("est-fin-laminate")}
                 isSelected={livingRoomConfig.shutterFinish === 'laminate'}
                 onClick={() => updateLivingRoomConfig('shutterFinish', 'laminate')}
                 features={[
@@ -240,7 +242,7 @@ const LivingRoomFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Veneer" 
                 description="Natural wood beauty with a premium look"
-                imageSrc={veneerImg}
+                imageSrc={getImgUrl("est-fin-veneer")}
                 isSelected={livingRoomConfig.shutterFinish === 'veneer'}
                 onClick={() => updateLivingRoomConfig('shutterFinish', 'veneer')}
                 features={[
@@ -253,7 +255,7 @@ const LivingRoomFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="PU Finish" 
                 description="Luxurious look with long lasting finish"
-                imageSrc={puImg}
+                imageSrc={getImgUrl("est-fin-pu")}
                 isSelected={livingRoomConfig.shutterFinish === 'pu'}
                 onClick={() => updateLivingRoomConfig('shutterFinish', 'pu')}
                 features={[
@@ -277,25 +279,25 @@ const LivingRoomFlow = ({ onComplete, onBackToCategory }) => {
             <div className="options-grid" style={{ marginBottom: '40px' }}>
               <VisualOptionCard 
                 title="Fluted Panel"
-                imageSrc={flutedPanelImg}
+                imageSrc={getImgUrl("est-wall-fluted-panel")}
                 isSelected={livingRoomConfig.designAccents.includes('fluted')}
                 onClick={() => handleDesignToggle('fluted')}
               />
               <VisualOptionCard 
                 title="Backlighting"
-                imageSrc={backlightingImg}
+                imageSrc={getImgUrl("est-add-backlighting")}
                 isSelected={livingRoomConfig.designAccents.includes('lighting')}
                 onClick={() => handleDesignToggle('lighting')}
               />
               <VisualOptionCard 
                 title="Cable Management"
-                imageSrc={cableManagementImg}
+                imageSrc={getImgUrl("est-off-cable-mgmt")}
                 isSelected={livingRoomConfig.designAccents.includes('cable-management')}
                 onClick={() => handleDesignToggle('cable-management')}
               />
               <VisualOptionCard 
                 title="Handleless / Push-to-open"
-                imageSrc={handlelessImg}
+                imageSrc={getImgUrl("est-hw-handleless-push")}
                 isSelected={livingRoomConfig.designAccents.includes('handleless')}
                 onClick={() => handleDesignToggle('handleless')}
               />

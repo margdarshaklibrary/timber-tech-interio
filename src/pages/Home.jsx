@@ -5,16 +5,8 @@ import ServiceCard from '../components/ServiceCard';
 import { services } from '../data/services';
 import { testimonials } from '../data/testimonials';
 import { ArrowRight, ShieldCheck, PenTool, HeartHandshake, Home as HomeIcon, Building2, Sofa, LayoutGrid } from 'lucide-react';
-import workshopImg from '../assets/images/workshop.png';
 import '../styles/Home.css';
-
-// Import project images for category cards
-import kitchenImg from '../assets/gallery/kitchen/modular-kitchenImage.jpg';
-import wardrobeImg from '../assets/gallery/wardrobe/wardrobe.jpg';
-import livingImg from '../assets/projects/new_project_1.png';
-import bedroomImg from '../assets/projects/new_project_2.jpg';
-import officeImg from '../assets/gallery/office/office-or-workflow.jpg';
-import fullHomeImg from '../assets/images/fullhome-interior.png';
+import { getImgUrl } from '../utils/cloudinary';
 
 const Home = () => {
   // Show only 3 services for preview
@@ -49,7 +41,7 @@ const Home = () => {
     <div className="page-wrapper">
       
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" style={{ backgroundImage: `url(${getImgUrl("ui-hero-main")})` }}>
         <div className="hero-overlay"></div>
         <div className="container hero-content">
           <h1 className="hero-title">Crafting Beautiful Spaces for Modern Living</h1>
@@ -72,12 +64,12 @@ const Home = () => {
           />
           <div className="estimator-category-grid">
             {[
-              { id: 'kitchen', name: 'Modular Kitchen', desc: 'Custom cabinets & layouts', img: kitchenImg },
-              { id: 'wardrobe', name: 'Wardrobe', desc: 'Storage & closet solutions', img: wardrobeImg },
-              { id: 'living', name: 'Living Room', desc: 'TV units & display cabinets', img: livingImg },
-              { id: 'bedroom', name: 'Bedroom', desc: 'Beds, side tables & more', img: bedroomImg },
-              { id: 'office', name: 'Office / Workspace', desc: 'Workstations & storage', img: officeImg },
-              { id: 'full-home', name: 'Full Home Interiors', desc: 'Complete end-to-end design', img: fullHomeImg }
+              { id: 'kitchen', name: 'Modular Kitchen', desc: 'Custom cabinets & layouts', img: getImgUrl("est-room-kitchen") },
+              { id: 'wardrobe', name: 'Wardrobe', desc: 'Storage & closet solutions', img: getImgUrl("gal-wardrobe-01") },
+              { id: 'living', name: 'Living Room', desc: 'TV units & display cabinets', img: getImgUrl("gal-living-room-01") },
+              { id: 'bedroom', name: 'Bedroom', desc: 'Beds, side tables & more', img: getImgUrl("gal-bedroom-01") },
+              { id: 'office', name: 'Office / Workspace', desc: 'Workstations & storage', img: getImgUrl("est-room-study-office") },
+              { id: 'full-home', name: 'Full Home Interiors', desc: 'Complete end-to-end design', img: getImgUrl("est-prop-villa") }
             ].map((cat) => (
               <div key={cat.id} className="estimator-category-card">
                 <div 
@@ -142,7 +134,7 @@ const Home = () => {
             <Link to="/about" className="text-link mt-4">Discover Our Story <ArrowRight size={16}/></Link>
           </div>
           <div className="about-image">
-            <img src={workshopImg} alt="Timber Tech Workshop" />
+            <img src={getImgUrl("ui-workshop")} alt="Timber Tech Workshop" />
           </div>
         </div>
       </section>

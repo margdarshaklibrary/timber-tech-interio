@@ -1,17 +1,4 @@
-import living1 from '../assets/projects/new_project_1.png';
-import living2 from '../assets/gallery/living-room/living-room-2.webp';
-import bed1 from '../assets/projects/new_project_2.jpg';
-import bed2 from '../assets/gallery/bedroom/bedroom-3.webp';
-import kitchen1 from '../assets/gallery/kitchen/modular-kitchenImage.jpg';
-import wardrobe1 from '../assets/projects/wardrobe-1.webp';
-import wardrobe2 from '../assets/gallery/wardrobe/wardrobe.jpg';
-import office1 from '../assets/estimator/workstation.png';
-import office2 from '../assets/gallery/office/office-or-workflow.jpg';
-import fullhome1 from '../assets/images/fullhome-interior.png';
-import fullhome2 from '../assets/images/fullhome-interior.png';
-import showroom1 from '../assets/projects/new_project_2.jpg';
-import newImg1 from '../assets/gallery/kitchen/modular-kitchen.jpg';
-import newImg2 from '../assets/projects/new_project_2.jpg';
+import { getImgUrl } from '../utils/cloudinary';
 
 export const projects = [
   // LIVING ROOM
@@ -21,7 +8,7 @@ export const projects = [
     title: 'Modern Darbhanga Villa',
     location: 'Darbhanga, Bihar',
     description: 'A complete living room setup with a custom TV unit and luxury sofas.',
-    image: living1,
+    image: getImgUrl("gal-living-room-01"),
     badge: 'Featured'
   },
   {
@@ -30,7 +17,7 @@ export const projects = [
     title: 'Contemporary TV Unit',
     location: 'Samastipur',
     description: 'Sleek wall-mounted TV unit with hidden wiring and elegant back-lighting.',
-    image: living2,
+    image: getImgUrl("gal-living-room-02"),
     badge: ''
   },
   // KITCHEN
@@ -40,7 +27,7 @@ export const projects = [
     title: 'Smart Storage Kitchen',
     location: 'Laheriasarai, Darbhanga',
     description: 'Modular kitchen with deep walnut finish and smart storage solutions.',
-    image: newImg1,
+    image: getImgUrl("gal-lobby-01"),
     badge: 'New'
   },
   {
@@ -49,7 +36,7 @@ export const projects = [
     title: 'Minimalist L-Shaped Kitchen',
     location: 'Madhubani',
     description: 'Clean, handle-less L-shaped kitchen featuring premium quartz countertops.',
-    image: kitchen1,
+    image: getImgUrl("gal-kitchen-01"),
     badge: ''
   },
   // BEDROOM
@@ -59,7 +46,25 @@ export const projects = [
     title: 'Cozy Master Bedroom',
     location: 'Madhubani',
     description: 'Custom king-size bed with integrated side tables and warm lighting.',
-    image: bed1,
+    image: getImgUrl("gal-bedroom-01"),
+    badge: ''
+  },
+  {
+    id: 'p4',
+    category: 'Wardrobe',
+    title: 'Premium Sliding Wardrobe',
+    location: 'Darbhanga, Bihar',
+    description: 'Full-wall sliding wardrobe with mirror panels and clean finishing.',
+    image: getImgUrl("gal-wardrobe-01"),
+    badge: ''
+  },
+  {
+    id: 'p5',
+    category: 'Office',
+    title: 'Professional Workspace',
+    location: 'Samastipur',
+    description: 'Office interior with ergonomic desks and document storage units.',
+    image: getImgUrl("gal-office-01"),
     badge: ''
   },
   {
@@ -68,7 +73,7 @@ export const projects = [
     title: 'Luxury Suite Setup',
     location: 'Darbhanga City',
     description: 'Plush upholstered headboard with a minimalist wooden bed frame.',
-    image: bed2,
+    image: getImgUrl("gal-bedroom-02"),
     badge: 'Featured'
   },
   // WARDROBE
@@ -78,7 +83,7 @@ export const projects = [
     title: 'Premium Sliding Wardrobe',
     location: 'Darbhanga, Bihar',
     description: 'Full-wall sliding wardrobe with mirror panels and clean finishing.',
-    image: wardrobe1,
+    image: getImgUrl("gal-wardrobe-01"),
     badge: ''
   },
   {
@@ -87,7 +92,7 @@ export const projects = [
     title: 'Walk-In Closet',
     location: 'Patna',
     description: 'Custom walk-in closet featuring open shelving and dedicated accessory drawers.',
-    image: wardrobe2,
+    image: getImgUrl("gal-wardrobe-02"),
     badge: 'Popular'
   },
   // OFFICE
@@ -97,7 +102,7 @@ export const projects = [
     title: 'Professional Workspace',
     location: 'Samastipur',
     description: 'Office interior with ergonomic desks and document storage units.',
-    image: office1,
+    image: getImgUrl("gal-office-01"),
     badge: ''
   },
   {
@@ -106,7 +111,7 @@ export const projects = [
     title: 'Executive Director Cabin',
     location: 'Darbhanga, Bihar',
     description: 'Premium wood paneled executive office with a custom conference desk.',
-    image: office2,
+    image: getImgUrl("gal-office-02"),
     badge: ''
   },
   // FULL INTERIOR
@@ -116,7 +121,7 @@ export const projects = [
     title: 'Complete Home Setup',
     location: 'Darbhanga City',
     description: 'End-to-end interior design including all furniture and fixtures.',
-    image: fullhome1,
+    image: getImgUrl("gal-showroom-01"),
     badge: 'Popular'
   },
   {
@@ -125,7 +130,7 @@ export const projects = [
     title: 'Heritage Villa Restoration',
     location: 'Muzaffarpur',
     description: 'Complete interior overhaul combining traditional woodwork with modern design.',
-    image: newImg2,
+    image: getImgUrl("gal-lobby-01"),
     badge: 'Featured'
   }
 ];

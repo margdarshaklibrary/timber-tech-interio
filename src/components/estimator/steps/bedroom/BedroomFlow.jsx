@@ -6,36 +6,38 @@ import LargeVisualCard from '../../LargeVisualCard';
 import DimensionInput from '../../DimensionInput';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-import bedOnlyImg from '../../../../assets/estimator/bed-only.png';
-import bedSideTableImg from '../../../../assets/estimator/bed+side-table.png';
-import bedWardrobeImg from '../../../../assets/estimator/bed+wordrobe.png';
-import completeBedroomImg from '../../../../assets/estimator/complete-bedroom.png';
+
+
+
+
 
 // New Bed & Headboard Images
-import queenSizeImg from '../../../../assets/estimator/queen-size.png';
-import kingSizeImg from '../../../../assets/estimator/king-size.png';
-import storageBedImg from '../../../../assets/estimator/storage-bed.png';
-import simpleWoodenImg from '../../../../assets/estimator/simple-wooden.png';
-import upholsteredImg from '../../../../assets/estimator/uphoistered.png';
-import fullWallPanelingImg from '../../../../assets/estimator/full-wall-paneling.png';
+
+
+
+
+
+
 
 // New Wardrobe Images
-import hingedWardrobeImg from '../../../../assets/estimator/hinged-wardrobe.png';
-import slidingWardrobeImg from '../../../../assets/estimator/sliding-wardrobe.png';
+
+
 
 // ... other imports ...
 import MaterialCard from '../../MaterialCard';
 
-import plywoodImg from '../../../../assets/estimator/plywood.png';
-import hdhmrImg from '../../../../assets/estimator/HDHMR.png';
-import laminateImg from '../../../../assets/estimator/Laminate.png';
-import veneerImg from '../../../../assets/estimator/Veneer.png';
-import puImg from '../../../../assets/estimator/PU Finish.png';
 
-import bedProjectImg from '../../../../assets/projects/new_project_2.jpg';
-import wardrobeImg from '../../../../assets/projects/wardrobe-1.webp';
-import matteImg from '../../../../assets/estimator/finish_matte_laminate_1789802016310.png';
-import acrylicImg from '../../../../assets/estimator/finish_glossy_acrylic_1789802033831.png';
+
+
+
+
+
+
+
+
+
+import { getImgUrl } from '../../../../utils/cloudinary';
+
 
 const BEDROOM_STEPS = [
   'Scope',
@@ -95,25 +97,25 @@ const BedroomFlow = ({ onComplete, onBackToCategory }) => {
             <div className="layout-grid">
               <LargeVisualCard 
                 title="Bed Only" 
-                imageSrc={bedOnlyImg}
+                imageSrc={getImgUrl("est-bed-only")}
                 isSelected={bedroomConfig.scope === 'bed'}
                 onClick={() => updateBedroomConfig('scope', 'bed')}
               />
               <LargeVisualCard 
                 title="Bed + Side Tables" 
-                imageSrc={bedSideTableImg}
+                imageSrc={getImgUrl("est-bed-with-side-table")}
                 isSelected={bedroomConfig.scope === 'bed+tables'}
                 onClick={() => updateBedroomConfig('scope', 'bed+tables')}
               />
               <LargeVisualCard 
                 title="Bed + Wardrobe" 
-                imageSrc={bedWardrobeImg}
+                imageSrc={getImgUrl("est-bed-with-wardrobe")}
                 isSelected={bedroomConfig.scope === 'bed+wardrobe'}
                 onClick={() => updateBedroomConfig('scope', 'bed+wardrobe')}
               />
               <LargeVisualCard 
                 title="Complete Bedroom" 
-                imageSrc={completeBedroomImg}
+                imageSrc={getImgUrl("est-bed-complete-room")}
                 isSelected={bedroomConfig.scope === 'complete'}
                 onClick={() => updateBedroomConfig('scope', 'complete')}
               />
@@ -130,19 +132,19 @@ const BedroomFlow = ({ onComplete, onBackToCategory }) => {
             <div className="options-grid" style={{ marginBottom: '40px' }}>
               <VisualOptionCard 
                 title="Queen Size" description="Standard 5x6.5 ft"
-                imageSrc={queenSizeImg}
+                imageSrc={getImgUrl("est-bed-queen-size")}
                 isSelected={bedroomConfig.bedType === 'queen'}
                 onClick={() => updateBedroomConfig('bedType', 'queen')}
               />
               <VisualOptionCard 
                 title="King Size" description="Large 6x6.5 ft"
-                imageSrc={kingSizeImg}
+                imageSrc={getImgUrl("est-bed-king-size")}
                 isSelected={bedroomConfig.bedType === 'king'}
                 onClick={() => updateBedroomConfig('bedType', 'king')}
               />
               <VisualOptionCard 
                 title="Storage Bed" description="Hydraulic or Drawer storage"
-                imageSrc={storageBedImg}
+                imageSrc={getImgUrl("est-bed-storage")}
                 isSelected={bedroomConfig.bedType === 'storage'}
                 onClick={() => updateBedroomConfig('bedType', 'storage')}
               />
@@ -152,19 +154,19 @@ const BedroomFlow = ({ onComplete, onBackToCategory }) => {
             <div className="options-grid">
               <VisualOptionCard 
                 title="Simple Wooden"
-                imageSrc={simpleWoodenImg}
+                imageSrc={getImgUrl("est-bed-simple-wooden")}
                 isSelected={bedroomConfig.headboard === 'wooden'}
                 onClick={() => updateBedroomConfig('headboard', 'wooden')}
               />
               <VisualOptionCard 
                 title="Upholstered (Fabric/Leather)"
-                imageSrc={upholsteredImg}
+                imageSrc={getImgUrl("est-bed-upholstered")}
                 isSelected={bedroomConfig.headboard === 'upholstered'}
                 onClick={() => updateBedroomConfig('headboard', 'upholstered')}
               />
               <VisualOptionCard 
                 title="Full Wall Paneling"
-                imageSrc={fullWallPanelingImg}
+                imageSrc={getImgUrl("est-wall-full-paneling")}
                 isSelected={bedroomConfig.headboard === 'paneling'}
                 onClick={() => updateBedroomConfig('headboard', 'paneling')}
               />
@@ -188,13 +190,13 @@ const BedroomFlow = ({ onComplete, onBackToCategory }) => {
             <div className="options-grid">
               <VisualOptionCard 
                 title="Hinged Wardrobe"
-                imageSrc={hingedWardrobeImg}
+                imageSrc={getImgUrl("est-wd-hinged")}
                 isSelected={bedroomConfig.wardrobeType === 'hinged'}
                 onClick={() => updateBedroomConfig('wardrobeType', 'hinged')}
               />
               <VisualOptionCard 
                 title="Sliding Wardrobe"
-                imageSrc={slidingWardrobeImg}
+                imageSrc={getImgUrl("est-wd-sliding")}
                 isSelected={bedroomConfig.wardrobeType === 'sliding'}
                 onClick={() => updateBedroomConfig('wardrobeType', 'sliding')}
               />
@@ -234,8 +236,8 @@ const BedroomFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Plywood" 
                 description="Strong, durable and reliable"
-                imageSrc={plywoodImg}
-                insetSrc={plywoodImg}
+                imageSrc={getImgUrl("est-mat-plywood")}
+                insetSrc={getImgUrl("est-mat-plywood")}
                 isSelected={bedroomConfig.coreMaterial === 'plywood'}
                 onClick={() => updateBedroomConfig('coreMaterial', 'plywood')}
                 features={[
@@ -247,8 +249,8 @@ const BedroomFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="HDHMR" 
                 description="High density, more durable & moisture resistant"
-                imageSrc={hdhmrImg}
-                insetSrc={hdhmrImg}
+                imageSrc={getImgUrl("est-mat-hdhmr")}
+                insetSrc={getImgUrl("est-mat-hdhmr")}
                 isSelected={bedroomConfig.coreMaterial === 'hdhmr'}
                 onClick={() => updateBedroomConfig('coreMaterial', 'hdhmr')}
                 features={[
@@ -265,7 +267,7 @@ const BedroomFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Laminate" 
                 description="Stylish, durable and easy to maintain"
-                imageSrc={laminateImg}
+                imageSrc={getImgUrl("est-fin-laminate")}
                 isSelected={bedroomConfig.shutterFinish === 'laminate'}
                 onClick={() => updateBedroomConfig('shutterFinish', 'laminate')}
                 features={[
@@ -278,7 +280,7 @@ const BedroomFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Veneer" 
                 description="Natural wood beauty with a premium look"
-                imageSrc={veneerImg}
+                imageSrc={getImgUrl("est-fin-veneer")}
                 isSelected={bedroomConfig.shutterFinish === 'veneer'}
                 onClick={() => updateBedroomConfig('shutterFinish', 'veneer')}
                 features={[
@@ -291,7 +293,7 @@ const BedroomFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="PU Finish" 
                 description="Luxurious look with long lasting finish"
-                imageSrc={puImg}
+                imageSrc={getImgUrl("est-fin-pu")}
                 isSelected={bedroomConfig.shutterFinish === 'pu'}
                 onClick={() => updateBedroomConfig('shutterFinish', 'pu')}
                 features={[

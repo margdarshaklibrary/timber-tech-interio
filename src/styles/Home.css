@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   background-color: var(--dark-espresso);
-  background-image: url('../assets/images/fullhome-interior.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
