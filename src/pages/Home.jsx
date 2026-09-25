@@ -5,7 +5,6 @@ import ServiceCard from '../components/ServiceCard';
 import { services } from '../data/services';
 import { testimonials } from '../data/testimonials';
 import { ArrowRight, ShieldCheck, PenTool, HeartHandshake, Home as HomeIcon, Building2, Sofa, LayoutGrid } from 'lucide-react';
-import workshopImg from '../assets/images/workshop.png';
 import '../styles/Home.css';
 import { getImgUrl } from '../utils/cloudinary';
 
@@ -65,12 +64,12 @@ const Home = () => {
           />
           <div className="estimator-category-grid">
             {[
-              { id: 'kitchen', name: 'Modular Kitchen', desc: 'Custom cabinets & layouts', img: kitchenImg },
-              { id: 'wardrobe', name: 'Wardrobe', desc: 'Storage & closet solutions', img: wardrobeImg },
-              { id: 'living', name: 'Living Room', desc: 'TV units & display cabinets', img: livingImg },
-              { id: 'bedroom', name: 'Bedroom', desc: 'Beds, side tables & more', img: bedroomImg },
-              { id: 'office', name: 'Office / Workspace', desc: 'Workstations & storage', img: officeImg },
-              { id: 'full-home', name: 'Full Home Interiors', desc: 'Complete end-to-end design', img: fullHomeImg }
+              { id: 'kitchen', name: 'Modular Kitchen', desc: 'Custom cabinets & layouts', img: getImgUrl("est-room-kitchen") },
+              { id: 'wardrobe', name: 'Wardrobe', desc: 'Storage & closet solutions', img: getImgUrl("gal-wardrobe-01") },
+              { id: 'living', name: 'Living Room', desc: 'TV units & display cabinets', img: getImgUrl("gal-living-room-01") },
+              { id: 'bedroom', name: 'Bedroom', desc: 'Beds, side tables & more', img: getImgUrl("gal-bedroom-01") },
+              { id: 'office', name: 'Office / Workspace', desc: 'Workstations & storage', img: getImgUrl("est-room-study-office") },
+              { id: 'full-home', name: 'Full Home Interiors', desc: 'Complete end-to-end design', img: getImgUrl("est-prop-villa") }
             ].map((cat) => (
               <div key={cat.id} className="estimator-category-card">
                 <div 

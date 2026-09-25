@@ -17,7 +17,7 @@ export const projects = [
     title: 'Contemporary TV Unit',
     location: 'Samastipur',
     description: 'Sleek wall-mounted TV unit with hidden wiring and elegant back-lighting.',
-    image: living2,
+    image: getImgUrl("gal-living-room-02"),
     badge: ''
   },
   // KITCHEN
@@ -36,7 +36,7 @@ export const projects = [
     title: 'Minimalist L-Shaped Kitchen',
     location: 'Madhubani',
     description: 'Clean, handle-less L-shaped kitchen featuring premium quartz countertops.',
-    image: kitchen1,
+    image: getImgUrl("gal-kitchen-01"),
     badge: ''
   },
   // BEDROOM
@@ -73,7 +73,7 @@ export const projects = [
     title: 'Luxury Suite Setup',
     location: 'Darbhanga City',
     description: 'Plush upholstered headboard with a minimalist wooden bed frame.',
-    image: bed2,
+    image: getImgUrl("gal-bedroom-02"),
     badge: 'Featured'
   },
   // WARDROBE
@@ -83,7 +83,7 @@ export const projects = [
     title: 'Premium Sliding Wardrobe',
     location: 'Darbhanga, Bihar',
     description: 'Full-wall sliding wardrobe with mirror panels and clean finishing.',
-    image: wardrobe1,
+    image: getImgUrl("gal-wardrobe-01"),
     badge: ''
   },
   {
@@ -92,7 +92,7 @@ export const projects = [
     title: 'Walk-In Closet',
     location: 'Patna',
     description: 'Custom walk-in closet featuring open shelving and dedicated accessory drawers.',
-    image: wardrobe2,
+    image: getImgUrl("gal-wardrobe-02"),
     badge: 'Popular'
   },
   // OFFICE
@@ -102,7 +102,7 @@ export const projects = [
     title: 'Professional Workspace',
     location: 'Samastipur',
     description: 'Office interior with ergonomic desks and document storage units.',
-    image: office1,
+    image: getImgUrl("gal-office-01"),
     badge: ''
   },
   {
@@ -111,7 +111,7 @@ export const projects = [
     title: 'Executive Director Cabin',
     location: 'Darbhanga, Bihar',
     description: 'Premium wood paneled executive office with a custom conference desk.',
-    image: office2,
+    image: getImgUrl("gal-office-02"),
     badge: ''
   },
   // FULL INTERIOR
@@ -130,7 +130,7 @@ export const projects = [
     title: 'Heritage Villa Restoration',
     location: 'Muzaffarpur',
     description: 'Complete interior overhaul combining traditional woodwork with modern design.',
-    image: newImg2,
+    image: getImgUrl("gal-lobby-01"),
     badge: 'Featured'
   }
 ];
