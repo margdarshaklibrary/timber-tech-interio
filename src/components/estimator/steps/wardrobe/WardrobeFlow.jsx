@@ -13,7 +13,7 @@ import walkInImg from '../../../../assets/estimator/walk-in-wardrobe.png';
 import builtInImg from '../../../../assets/estimator/built-inniche wardrobe.png';
 import matteImg from '../../../../assets/estimator/finish_matte_laminate_1789802016310.png';
 import acrylicImg from '../../../../assets/estimator/finish_glossy_acrylic_1789802033831.png';
-import showroomImg from '../../../../assets/projects/showroom-1.webp';
+import showroomImg from '../../../../assets/projects/new_project_2.jpg';
 import wardrobe1 from '../../../../assets/projects/wardrobe-1.webp';
 
 import plywoodImg from '../../../../assets/estimator/plywood.png';

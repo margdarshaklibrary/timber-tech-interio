@@ -3,7 +3,7 @@ import { useAppContext } from '../context/AppContext';
 import SectionTitle from '../components/SectionTitle';
 import { CheckCircle } from 'lucide-react';
 import '../styles/BookAppointment.css';
-import workshopImg from '../assets/images/workshop.jpg';
+import workshopImg from '../assets/images/workshop.png';
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxPrjUI82-VFsYGYev1Jcodog7-2oAhyb7dpqKc0WCj1EILDJf5JogZrfv5GeQiJK15/exec';
 

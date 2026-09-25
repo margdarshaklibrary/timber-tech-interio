@@ -29,8 +29,8 @@ import matteImg from '../../../../assets/estimator/finish_matte_laminate_1789802
 import acrylicImg from '../../../../assets/estimator/finish_glossy_acrylic_1789802033831.png';
 
 // Fallback images from existing project
-import showroomImg from '../../../../assets/projects/showroom-1.webp';
-import livingImg from '../../../../assets/projects/living-room-1.webp';
+import showroomImg from '../../../../assets/projects/new_project_2.jpg';
+import livingImg from '../../../../assets/projects/new_project_1.png';
 import lobbyImg from '../../../../assets/projects/lobby-1.webp';
 
 const KITCHEN_STEPS = [

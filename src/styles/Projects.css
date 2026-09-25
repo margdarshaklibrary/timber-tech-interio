@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   background-color: var(--dark-espresso);
-  background-image: url('../assets/projects/showroom-1.webp'); /* fallback bg */
+  background-image: url('../assets/projects/new_project_2.jpg'); /* fallback bg */
   background-size: cover;
   background-position: center;
 }

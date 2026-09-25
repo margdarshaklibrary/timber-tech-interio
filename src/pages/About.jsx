@@ -3,7 +3,7 @@ import SectionTitle from '../components/SectionTitle';
 import { Link } from 'react-router-dom';
 import { CheckCircle } from 'lucide-react';
 import '../styles/About.css';
-import showroomImg from '../assets/images/gallery-showroom-1.jpg';
+import workshopImg from '../assets/images/workshop.png';
 
 const About = () => {
   return (
@@ -30,7 +30,7 @@ const About = () => {
           </div>
           <div className="about-images">
             <div className="image-stack">
-              <img src={showroomImg} alt="Showroom" className="img-back" />
+              <img src={workshopImg} alt="Workshop" className="img-back" />
 
             </div>
           </div>

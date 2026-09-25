@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import '../styles/ProjectCard.css';
 
@@ -15,7 +15,9 @@ const ProjectCard = ({ project }) => {
       <div className="project-content">
         <div className="project-eyebrow">
           <span className="project-category">{project.category.toUpperCase()} PROJECT</span>
-          <span className="project-location">&middot; {project.location}</span>
+          <span className="project-location" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+            &middot; <MapPin size={14} /> {project.location}
+          </span>
         </div>
         <h3 className="project-title">{project.title}</h3>
         <p className="project-desc">{project.description}</p>

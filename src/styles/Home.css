@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   background-color: var(--dark-espresso);
-  background-image: url('../assets/images/hero.jpg');
+  background-image: url('../assets/images/fullhome-interior.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -289,4 +289,111 @@
 
 .text-center {
   text-align: center;
+}
+
+/* Estimator Category Grid Redesign */
+.estimator-category-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .estimator-category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .estimator-category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.estimator-category-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.estimator-category-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+.estimator-category-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.30) 50%, rgba(0,0,0,0.05) 100%);
+  transition: background 0.4s ease;
+}
+
+.estimator-category-card:hover .estimator-category-bg {
+  transform: scale(1.04);
+}
+
+.estimator-category-card:hover .estimator-category-overlay {
+  background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.20) 50%, rgba(0,0,0,0.05) 100%);
+}
+
+.estimator-category-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 30px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.estimator-category-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.estimator-category-desc {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.estimator-category-btn {
+  background-color: var(--white);
+  color: var(--dark-espresso);
+  border-radius: 50px;
+  padding: 0 24px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: auto;
+  border: none;
+}
+
+.estimator-category-btn .btn-icon-right {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.estimator-category-card:hover .estimator-category-btn {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.estimator-category-card:hover .estimator-category-btn .btn-icon-right {
+  transform: translateX(4px);
 }
