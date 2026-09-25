@@ -1,17 +1,4 @@
-import living1 from '../assets/projects/new_project_1.png';
-import living2 from '../assets/gallery/living-room/living-room-2.webp';
-import bed1 from '../assets/projects/new_project_2.jpg';
-import bed2 from '../assets/gallery/bedroom/bedroom-3.webp';
-import kitchen1 from '../assets/gallery/kitchen/modular-kitchenImage.jpg';
-import wardrobe1 from '../assets/projects/wardrobe-1.webp';
-import wardrobe2 from '../assets/gallery/wardrobe/wardrobe.jpg';
-import office1 from '../assets/estimator/workstation.png';
-import office2 from '../assets/gallery/office/office-or-workflow.jpg';
-import fullhome1 from '../assets/images/fullhome-interior.png';
-import fullhome2 from '../assets/images/fullhome-interior.png';
-import showroom1 from '../assets/projects/new_project_2.jpg';
-import newImg1 from '../assets/gallery/kitchen/modular-kitchen.jpg';
-import newImg2 from '../assets/projects/new_project_2.jpg';
+import { getImgUrl } from '../utils/cloudinary';
 
 export const projects = [
   // LIVING ROOM
@@ -21,7 +8,7 @@ export const projects = [
     title: 'Modern Darbhanga Villa',
     location: 'Darbhanga, Bihar',
     description: 'A complete living room setup with a custom TV unit and luxury sofas.',
-    image: living1,
+    image: getImgUrl("gal-living-room-01"),
     badge: 'Featured'
   },
   {
@@ -40,7 +27,7 @@ export const projects = [
     title: 'Smart Storage Kitchen',
     location: 'Laheriasarai, Darbhanga',
     description: 'Modular kitchen with deep walnut finish and smart storage solutions.',
-    image: newImg1,
+    image: getImgUrl("gal-lobby-01"),
     badge: 'New'
   },
   {
@@ -59,7 +46,25 @@ export const projects = [
     title: 'Cozy Master Bedroom',
     location: 'Madhubani',
     description: 'Custom king-size bed with integrated side tables and warm lighting.',
-    image: bed1,
+    image: getImgUrl("gal-bedroom-01"),
+    badge: ''
+  },
+  {
+    id: 'p4',
+    category: 'Wardrobe',
+    title: 'Premium Sliding Wardrobe',
+    location: 'Darbhanga, Bihar',
+    description: 'Full-wall sliding wardrobe with mirror panels and clean finishing.',
+    image: getImgUrl("gal-wardrobe-01"),
+    badge: ''
+  },
+  {
+    id: 'p5',
+    category: 'Office',
+    title: 'Professional Workspace',
+    location: 'Samastipur',
+    description: 'Office interior with ergonomic desks and document storage units.',
+    image: getImgUrl("gal-office-01"),
     badge: ''
   },
   {
@@ -116,7 +121,7 @@ export const projects = [
     title: 'Complete Home Setup',
     location: 'Darbhanga City',
     description: 'End-to-end interior design including all furniture and fixtures.',
-    image: fullhome1,
+    image: getImgUrl("gal-showroom-01"),
     badge: 'Popular'
   },
   {

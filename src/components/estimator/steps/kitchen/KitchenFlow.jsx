@@ -6,32 +6,34 @@ import LargeVisualCard from '../../LargeVisualCard';
 import DimensionInput from '../../DimensionInput';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-import layoutStraight from '../../../../assets/estimator/single wall ktichen.png';
-import layoutLShape from '../../../../assets/estimator/L-shaped kitchen.png';
-import layoutParallel from '../../../../assets/estimator/galley kitchen.png';
-import layoutUShape from '../../../../assets/estimator/u-shaped kitchen.png';
-import layoutIsland from '../../../../assets/estimator/island kitchen.png';
-import layoutPeninsula from '../../../../assets/estimator/peninsula kitchen.png';
 
-import baseCabinetImg from '../../../../assets/estimator/base cabinet.png';
-import upperCabinetImg from '../../../../assets/estimator/upper cabinet.png';
-import tallCabinetImg from '../../../../assets/estimator/tall cabinet.png';
-import completeKitchenImg from '../../../../assets/estimator/complete kitchen.png';
+
+
+
+
+
+
+
+
+
+
 import MaterialCard from '../../MaterialCard';
 
-import plywoodImg from '../../../../assets/estimator/plywood.png';
-import hdhmrImg from '../../../../assets/estimator/HDHMR.png';
-import laminateImg from '../../../../assets/estimator/Laminate.png';
-import veneerImg from '../../../../assets/estimator/Veneer.png';
-import puImg from '../../../../assets/estimator/PU Finish.png';
 
-import matteImg from '../../../../assets/estimator/finish_matte_laminate_1789802016310.png';
-import acrylicImg from '../../../../assets/estimator/finish_glossy_acrylic_1789802033831.png';
+
+
+
+
+
+
+
 
 // Fallback images from existing project
-import showroomImg from '../../../../assets/projects/new_project_2.jpg';
-import livingImg from '../../../../assets/projects/new_project_1.png';
-import lobbyImg from '../../../../assets/projects/lobby-1.webp';
+
+
+
+import { getImgUrl } from '../../../../utils/cloudinary';
+
 
 const KITCHEN_STEPS = [
   'Scope',
@@ -163,7 +165,7 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <LargeVisualCard 
                 title="Straight Kitchen"
                 description="Single wall cabinet arrangement"
-                imageSrc={layoutStraight}
+                imageSrc={getImgUrl("est-kit-single-wall")}
                 isLayout={true}
                 isSelected={kitchenConfig.layout === 'straight'}
                 onClick={() => updateKitchenConfig('layout', 'straight')}
@@ -171,7 +173,7 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <LargeVisualCard 
                 title="L-Shaped Kitchen" 
                 description="Two connected cabinet runs"
-                imageSrc={layoutLShape}
+                imageSrc={getImgUrl("est-kit-l-shaped")}
                 isLayout={true}
                 isSelected={kitchenConfig.layout === 'l-shaped'}
                 onClick={() => updateKitchenConfig('layout', 'l-shaped')}
@@ -179,7 +181,7 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <LargeVisualCard 
                 title="Parallel Kitchen" 
                 description="Two facing cabinet runs"
-                imageSrc={layoutParallel}
+                imageSrc={getImgUrl("est-kit-galley")}
                 isLayout={true}
                 isSelected={kitchenConfig.layout === 'parallel'}
                 onClick={() => updateKitchenConfig('layout', 'parallel')}
@@ -187,7 +189,7 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <LargeVisualCard 
                 title="U-Shaped Kitchen" 
                 description="Three connected cabinet runs"
-                imageSrc={layoutUShape}
+                imageSrc={getImgUrl("est-kit-u-shaped")}
                 isLayout={true}
                 isSelected={kitchenConfig.layout === 'u-shaped'}
                 onClick={() => updateKitchenConfig('layout', 'u-shaped')}
@@ -195,7 +197,7 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <LargeVisualCard 
                 title="Island Kitchen" 
                 description="Main run with detached island"
-                imageSrc={layoutIsland}
+                imageSrc={getImgUrl("est-kit-island")}
                 isLayout={true}
                 isSelected={kitchenConfig.layout === 'island'}
                 onClick={() => updateKitchenConfig('layout', 'island')}
@@ -203,7 +205,7 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <LargeVisualCard 
                 title="Peninsula Kitchen" 
                 description="Connected island-like extension"
-                imageSrc={layoutPeninsula}
+                imageSrc={getImgUrl("est-kit-peninsula")}
                 isLayout={true}
                 isSelected={kitchenConfig.layout === 'peninsula'}
                 onClick={() => updateKitchenConfig('layout', 'peninsula')}
@@ -222,28 +224,28 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <VisualOptionCard 
                 title="Base Cabinets" 
                 description="Lower cabinets below the countertop"
-                imageSrc={baseCabinetImg}
+                imageSrc={getImgUrl("est-kit-base-cabinet")}
                 isSelected={kitchenConfig.cabinetConfig.includes('base')}
                 onClick={() => handleCabinetToggle('base')}
               />
               <VisualOptionCard 
                 title="Upper Cabinets" 
                 description="Wall mounted storage cabinets"
-                imageSrc={upperCabinetImg}
+                imageSrc={getImgUrl("est-kit-upper-cabinet")}
                 isSelected={kitchenConfig.cabinetConfig.includes('upper')}
                 onClick={() => handleCabinetToggle('upper')}
               />
               <VisualOptionCard 
                 title="Tall Units" 
                 description="Full height pantry or microwave units"
-                imageSrc={tallCabinetImg}
+                imageSrc={getImgUrl("est-kit-tall-cabinet")}
                 isSelected={kitchenConfig.cabinetConfig.includes('tall')}
                 onClick={() => handleCabinetToggle('tall')}
               />
               <VisualOptionCard 
                 title="Complete Kitchen" 
                 description="Base + Upper + Tall + Lofts"
-                imageSrc={completeKitchenImg}
+                imageSrc={getImgUrl("est-kit-complete")}
                 isSelected={kitchenConfig.cabinetConfig.includes('complete')}
                 onClick={() => handleCabinetToggle('complete')}
               />
@@ -303,8 +305,8 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Plywood" 
                 description="Strong, durable and reliable"
-                imageSrc={plywoodImg}
-                insetSrc={plywoodImg}
+                imageSrc={getImgUrl("est-mat-plywood")}
+                insetSrc={getImgUrl("est-mat-plywood")}
                 isSelected={kitchenConfig.coreMaterial === 'plywood'}
                 onClick={() => updateKitchenConfig('coreMaterial', 'plywood')}
                 features={[
@@ -316,8 +318,8 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="HDHMR" 
                 description="High density, more durable & moisture resistant"
-                imageSrc={hdhmrImg}
-                insetSrc={hdhmrImg}
+                imageSrc={getImgUrl("est-mat-hdhmr")}
+                insetSrc={getImgUrl("est-mat-hdhmr")}
                 isSelected={kitchenConfig.coreMaterial === 'hdhmr'}
                 onClick={() => updateKitchenConfig('coreMaterial', 'hdhmr')}
                 features={[
@@ -334,7 +336,7 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Laminate" 
                 description="Stylish, durable and easy to maintain"
-                imageSrc={laminateImg}
+                imageSrc={getImgUrl("est-fin-laminate")}
                 isSelected={kitchenConfig.shutterFinish === 'laminate'}
                 onClick={() => updateKitchenConfig('shutterFinish', 'laminate')}
                 features={[
@@ -347,7 +349,7 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Veneer" 
                 description="Natural wood beauty with a premium look"
-                imageSrc={veneerImg}
+                imageSrc={getImgUrl("est-fin-veneer")}
                 isSelected={kitchenConfig.shutterFinish === 'veneer'}
                 onClick={() => updateKitchenConfig('shutterFinish', 'veneer')}
                 features={[
@@ -360,7 +362,7 @@ const KitchenFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="PU Finish" 
                 description="Luxurious look with long lasting finish"
-                imageSrc={puImg}
+                imageSrc={getImgUrl("est-fin-pu")}
                 isSelected={kitchenConfig.shutterFinish === 'pu'}
                 onClick={() => updateKitchenConfig('shutterFinish', 'pu')}
                 features={[

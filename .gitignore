@@ -32,6 +32,5 @@ dist-ssr
 .vercel
 .env*
 
-
-# assets
-/src/assets/
+# Image assets
+src/assets/

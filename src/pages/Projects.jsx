@@ -5,6 +5,7 @@ import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
 import { Link } from 'react-router-dom';
 import '../styles/Projects.css';
+import { getImgUrl } from '../utils/cloudinary';
 
 const Projects = () => {
   const { activeProjectCategory, setActiveProjectCategory } = useAppContext();
@@ -16,7 +17,7 @@ const Projects = () => {
 
   return (
     <div className="page-wrapper">
-      <section className="projects-hero">
+      <section className="projects-hero" style={{ backgroundImage: `url(${getImgUrl("ui-showroom-banner")})` }}>
         <div className="projects-hero-overlay"></div>
         <div className="container projects-hero-content">
           <h1 className="hero-title">Masterpieces of Living</h1>

@@ -3,7 +3,7 @@ import { useAppContext } from '../context/AppContext';
 import SectionTitle from '../components/SectionTitle';
 import { CheckCircle } from 'lucide-react';
 import '../styles/BookAppointment.css';
-import workshopImg from '../assets/images/workshop.png';
+import { getImgUrl } from '../utils/cloudinary';
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxPrjUI82-VFsYGYev1Jcodog7-2oAhyb7dpqKc0WCj1EILDJf5JogZrfv5GeQiJK15/exec';
 
@@ -257,7 +257,7 @@ const BookAppointment = () => {
             </div>
             
             <div className="info-image-card">
-              <img src={workshopImg} alt="Artisan Workshop" />
+              <img src={getImgUrl("ui-workshop")} alt="Artisan Workshop" />
               <div className="image-card-overlay">
                 <h4>Artisan Workshop</h4>
                 <p>WHERE VISION BECOMES REALITY</p>

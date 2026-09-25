@@ -7,14 +7,7 @@ import { testimonials } from '../data/testimonials';
 import { ArrowRight, ShieldCheck, PenTool, HeartHandshake, Home as HomeIcon, Building2, Sofa, LayoutGrid } from 'lucide-react';
 import workshopImg from '../assets/images/workshop.png';
 import '../styles/Home.css';
-
-// Import project images for category cards
-import kitchenImg from '../assets/gallery/kitchen/modular-kitchenImage.jpg';
-import wardrobeImg from '../assets/gallery/wardrobe/wardrobe.jpg';
-import livingImg from '../assets/projects/new_project_1.png';
-import bedroomImg from '../assets/projects/new_project_2.jpg';
-import officeImg from '../assets/gallery/office/office-or-workflow.jpg';
-import fullHomeImg from '../assets/images/fullhome-interior.png';
+import { getImgUrl } from '../utils/cloudinary';
 
 const Home = () => {
   // Show only 3 services for preview
@@ -49,7 +42,7 @@ const Home = () => {
     <div className="page-wrapper">
       
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" style={{ backgroundImage: `url(${getImgUrl("ui-hero-main")})` }}>
         <div className="hero-overlay"></div>
         <div className="container hero-content">
           <h1 className="hero-title">Crafting Beautiful Spaces for Modern Living</h1>
@@ -142,7 +135,7 @@ const Home = () => {
             <Link to="/about" className="text-link mt-4">Discover Our Story <ArrowRight size={16}/></Link>
           </div>
           <div className="about-image">
-            <img src={workshopImg} alt="Timber Tech Workshop" />
+            <img src={getImgUrl("ui-workshop")} alt="Timber Tech Workshop" />
           </div>
         </div>
       </section>

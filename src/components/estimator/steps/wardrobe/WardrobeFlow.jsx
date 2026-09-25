@@ -7,32 +7,34 @@ import DimensionInput from '../../DimensionInput';
 import MaterialCard from '../../MaterialCard';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-import hingedImg from '../../../../assets/estimator/hinged wardrobe.png';
-import slidingImg from '../../../../assets/estimator/sliding wardrobe.png';
-import walkInImg from '../../../../assets/estimator/walk-in-wardrobe.png';
-import builtInImg from '../../../../assets/estimator/built-inniche wardrobe.png';
-import matteImg from '../../../../assets/estimator/finish_matte_laminate_1789802016310.png';
-import acrylicImg from '../../../../assets/estimator/finish_glossy_acrylic_1789802033831.png';
-import showroomImg from '../../../../assets/projects/new_project_2.jpg';
-import wardrobe1 from '../../../../assets/projects/wardrobe-1.webp';
 
-import plywoodImg from '../../../../assets/estimator/plywood.png';
-import hdhmrImg from '../../../../assets/estimator/HDHMR.png';
-import laminateImg from '../../../../assets/estimator/Laminate.png';
-import veneerImg from '../../../../assets/estimator/Veneer.png';
-import puImg from '../../../../assets/estimator/PU Finish.png';
 
-import hangingFocusImg from '../../../../assets/estimator/hanging focus.png';
-import shelvingFocusImg from '../../../../assets/estimator/shelving focus.png';
-import balancedImg from '../../../../assets/estimator/balanced or combination.png';
-import drawerHeavyImg from '../../../../assets/estimator/drawer heary.png';
 
-import pullDownImg from '../../../../assets/estimator/pulldown hanger.png';
-import jewelleryImg from '../../../../assets/estimator/jewellary drawer.png';
-import lightingImg from '../../../../assets/estimator/internal-lightening.png';
-import mirrorImg from '../../../../assets/estimator/mirror.png';
-import softCloseImg from '../../../../assets/estimator/self-close-hardware.png';
-import trouserRackImg from '../../../../assets/estimator/trouser-rack.png';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { getImgUrl } from '../../../../utils/cloudinary';
+
 
 const WARDROBE_STEPS = [
   'Scope',
@@ -101,25 +103,25 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
             <div className="layout-grid-4">
               <LargeVisualCard 
                 title="Hinged Wardrobe" 
-                imageSrc={hingedImg}
+                imageSrc={getImgUrl("est-wd-hinged")}
                 isSelected={wardrobeConfig.type === 'hinged'}
                 onClick={() => updateWardrobeConfig('type', 'hinged')}
               />
               <LargeVisualCard 
                 title="Sliding Wardrobe" 
-                imageSrc={slidingImg}
+                imageSrc={getImgUrl("est-wd-sliding")}
                 isSelected={wardrobeConfig.type === 'sliding'}
                 onClick={() => updateWardrobeConfig('type', 'sliding')}
               />
               <LargeVisualCard 
                 title="Walk-in Wardrobe" 
-                imageSrc={walkInImg}
+                imageSrc={getImgUrl("est-wd-walk-in")}
                 isSelected={wardrobeConfig.type === 'walk-in'}
                 onClick={() => updateWardrobeConfig('type', 'walk-in')}
               />
               <LargeVisualCard 
                 title="Built-in / Niche Wardrobe" 
-                imageSrc={builtInImg}
+                imageSrc={getImgUrl("est-wd-built-in-niche")}
                 isSelected={wardrobeConfig.type === 'built-in'}
                 onClick={() => updateWardrobeConfig('type', 'built-in')}
               />
@@ -137,28 +139,28 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
               <VisualOptionCard 
                 title="Hanging Focus" 
                 description="More space for hanging clothes"
-                imageSrc={hangingFocusImg}
+                imageSrc={getImgUrl("est-wd-hanging-focus")}
                 isSelected={wardrobeConfig.internalLayout === 'hanging'}
                 onClick={() => updateWardrobeConfig('internalLayout', 'hanging')}
               />
               <VisualOptionCard 
                 title="Shelving Focus" 
                 description="More stacked folded clothes"
-                imageSrc={shelvingFocusImg}
+                imageSrc={getImgUrl("est-wd-shelving-focus")}
                 isSelected={wardrobeConfig.internalLayout === 'shelves'}
                 onClick={() => updateWardrobeConfig('internalLayout', 'shelves')}
               />
               <VisualOptionCard 
                 title="Balanced / Combination" 
                 description="Mix of hanging, shelves, and drawers"
-                imageSrc={balancedImg}
+                imageSrc={getImgUrl("est-wd-balanced-combo")}
                 isSelected={wardrobeConfig.internalLayout === 'combination'}
                 onClick={() => updateWardrobeConfig('internalLayout', 'combination')}
               />
               <VisualOptionCard 
                 title="Drawer Heavy" 
                 description="Extra internal drawers"
-                imageSrc={drawerHeavyImg}
+                imageSrc={getImgUrl("est-wd-drawer-heavy")}
                 isSelected={wardrobeConfig.internalLayout === 'drawers'}
                 onClick={() => updateWardrobeConfig('internalLayout', 'drawers')}
               />
@@ -191,8 +193,8 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Plywood" 
                 description="Strong, durable and reliable"
-                imageSrc={plywoodImg}
-                insetSrc={plywoodImg}
+                imageSrc={getImgUrl("est-mat-plywood")}
+                insetSrc={getImgUrl("est-mat-plywood")}
                 isSelected={wardrobeConfig.coreMaterial === 'plywood'}
                 onClick={() => updateWardrobeConfig('coreMaterial', 'plywood')}
                 features={[
@@ -204,8 +206,8 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="HDHMR" 
                 description="High density, more durable & moisture resistant"
-                imageSrc={hdhmrImg}
-                insetSrc={hdhmrImg}
+                imageSrc={getImgUrl("est-mat-hdhmr")}
+                insetSrc={getImgUrl("est-mat-hdhmr")}
                 isSelected={wardrobeConfig.coreMaterial === 'hdhmr'}
                 onClick={() => updateWardrobeConfig('coreMaterial', 'hdhmr')}
                 features={[
@@ -222,7 +224,7 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Laminate" 
                 description="Stylish, durable and easy to maintain"
-                imageSrc={laminateImg}
+                imageSrc={getImgUrl("est-fin-laminate")}
                 isSelected={wardrobeConfig.shutterFinish === 'laminate'}
                 onClick={() => updateWardrobeConfig('shutterFinish', 'laminate')}
                 features={[
@@ -235,7 +237,7 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Veneer" 
                 description="Natural wood beauty with a premium look"
-                imageSrc={veneerImg}
+                imageSrc={getImgUrl("est-fin-veneer")}
                 isSelected={wardrobeConfig.shutterFinish === 'veneer'}
                 onClick={() => updateWardrobeConfig('shutterFinish', 'veneer')}
                 features={[
@@ -248,7 +250,7 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="PU Finish" 
                 description="Luxurious look with long lasting finish"
-                imageSrc={puImg}
+                imageSrc={getImgUrl("est-fin-pu")}
                 isSelected={wardrobeConfig.shutterFinish === 'pu'}
                 onClick={() => updateWardrobeConfig('shutterFinish', 'pu')}
                 features={[
@@ -261,7 +263,7 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
               <MaterialCard 
                 title="Acrylic" 
                 description="High gloss, modern look, and easy to clean"
-                imageSrc={acrylicImg}
+                imageSrc={getImgUrl("est-fin-glossy-acrylic")}
                 isSelected={wardrobeConfig.shutterFinish === 'acrylic'}
                 onClick={() => updateWardrobeConfig('shutterFinish', 'acrylic')}
                 features={[
@@ -286,42 +288,42 @@ const WardrobeFlow = ({ onComplete, onBackToCategory }) => {
               <VisualOptionCard 
                 title="Pull-down Hanger"
                 description="Easily access high storage space"
-                imageSrc={pullDownImg}
+                imageSrc={getImgUrl("est-wd-pulldown-hanger")}
                 isSelected={wardrobeConfig.accessories.includes('pullDown')}
                 onClick={() => handleAccessoryToggle('pullDown')}
               />
               <VisualOptionCard 
                 title="Jewellery Drawer"
                 description="Organized storage for your valuables"
-                imageSrc={jewelleryImg}
+                imageSrc={getImgUrl("est-wd-jewellery-drawer")}
                 isSelected={wardrobeConfig.accessories.includes('jewellery')}
                 onClick={() => handleAccessoryToggle('jewellery')}
               />
               <VisualOptionCard 
                 title="Internal Lighting"
                 description="Better visibility with elegant lighting"
-                imageSrc={lightingImg}
+                imageSrc={getImgUrl("est-add-internal-light")}
                 isSelected={wardrobeConfig.accessories.includes('lighting')}
                 onClick={() => handleAccessoryToggle('lighting')}
               />
               <VisualOptionCard 
                 title="Mirror"
                 description="Full-length mirror for your convenience"
-                imageSrc={mirrorImg}
+                imageSrc={getImgUrl("est-wd-mirror")}
                 isSelected={wardrobeConfig.accessories.includes('mirror')}
                 onClick={() => handleAccessoryToggle('mirror')}
               />
               <VisualOptionCard 
                 title="Soft-close Hardware"
                 description="Smooth and silent closing"
-                imageSrc={softCloseImg}
+                imageSrc={getImgUrl("est-hw-self-close")}
                 isSelected={wardrobeConfig.accessories.includes('softClose')}
                 onClick={() => handleAccessoryToggle('softClose')}
               />
               <VisualOptionCard 
                 title="Trouser Rack"
                 description="Keep your trousers neat and organized"
-                imageSrc={trouserRackImg}
+                imageSrc={getImgUrl("est-wd-trouser-rack")}
                 isSelected={wardrobeConfig.accessories.includes('trouserRack')}
                 onClick={() => handleAccessoryToggle('trouserRack')}
               />

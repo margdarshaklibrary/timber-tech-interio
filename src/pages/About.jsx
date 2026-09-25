@@ -3,7 +3,7 @@ import SectionTitle from '../components/SectionTitle';
 import { Link } from 'react-router-dom';
 import { CheckCircle } from 'lucide-react';
 import '../styles/About.css';
-import workshopImg from '../assets/images/workshop.png';
+import { getImgUrl } from '../utils/cloudinary';
 
 const About = () => {
   return (
@@ -30,7 +30,7 @@ const About = () => {
           </div>
           <div className="about-images">
             <div className="image-stack">
-              <img src={workshopImg} alt="Workshop" className="img-back" />
+              <img src={getImgUrl("ui-workshop")} alt="Showroom" className="img-back" />
 
             </div>
           </div>
