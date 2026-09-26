@@ -17,7 +17,7 @@ export const services = [
     id: 'modular-kitchen',
     title: 'Modular Kitchen',
     description: 'Smart kitchen designs with strong storage.',
-    image: getImgUrl("gal-lobby-01")
+    image: getImgUrl("est-kit-complete")
   },
   {
     id: 'wardrobes',
@@ -29,13 +29,13 @@ export const services = [
     id: 'dining',
     title: 'Dining',
     description: 'Dining tables and units for everyday use.',
-    image: getImgUrl("gal-showroom-01")
+    image: getImgUrl("est-room-dining")
   },
   {
     id: 'tv-units',
     title: 'TV Units',
     description: 'Modern TV units for living rooms.',
-    image: getImgUrl("gal-living-room-02")
+    image: getImgUrl("est-tv-full-wall")
   },
   {
     id: 'office',
@@ -47,12 +47,12 @@ export const services = [
     id: 'full-home',
     title: 'Full Home',
     description: 'Complete interior setup for your home.',
-    image: getImgUrl("gal-lobby-01")
+    image: getImgUrl("est-prop-villa")
   },
   {
     id: 'custom-furniture',
     title: 'Custom Furniture',
     description: 'Made-to-size furniture as per your need.',
-    image: getImgUrl("gal-wardrobe-02")
+    image: getImgUrl("est-liv-sofas-beds")
   }
 ];

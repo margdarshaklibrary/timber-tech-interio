@@ -22,14 +22,14 @@ const CategorySelection = () => {
         <VisualOptionCard 
           title="Modular Kitchen" 
           description="Complete custom kitchen solutions"
-          imageSrc={getImgUrl("gal-lobby-01")}
+          imageSrc={getImgUrl("est-kit-modular")}
           isSelected={category === 'kitchen'}
           onClick={() => handleSelect('kitchen')}
         />
         <VisualOptionCard 
           title="Wardrobe" 
           description="Storage and closet solutions"
-          imageSrc={getImgUrl("gal-wardrobe-01")}
+          imageSrc={getImgUrl("est-wd-complete")}
           isSelected={category === 'wardrobe'}
           onClick={() => handleSelect('wardrobe')}
         />

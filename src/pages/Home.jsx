@@ -64,8 +64,8 @@ const Home = () => {
           />
           <div className="estimator-category-grid">
             {[
-              { id: 'kitchen', name: 'Modular Kitchen', desc: 'Custom cabinets & layouts', img: getImgUrl("est-room-kitchen") },
-              { id: 'wardrobe', name: 'Wardrobe', desc: 'Storage & closet solutions', img: getImgUrl("gal-wardrobe-01") },
+              { id: 'kitchen', name: 'Modular Kitchen', desc: 'Custom cabinets & layouts', img: getImgUrl("est-kit-modular") },
+              { id: 'wardrobe', name: 'Wardrobe', desc: 'Storage & closet solutions', img: getImgUrl("est-wd-complete") },
               { id: 'living', name: 'Living Room', desc: 'TV units & display cabinets', img: getImgUrl("gal-living-room-01") },
               { id: 'bedroom', name: 'Bedroom', desc: 'Beds, side tables & more', img: getImgUrl("gal-bedroom-01") },
               { id: 'office', name: 'Office / Workspace', desc: 'Workstations & storage', img: getImgUrl("est-room-study-office") },

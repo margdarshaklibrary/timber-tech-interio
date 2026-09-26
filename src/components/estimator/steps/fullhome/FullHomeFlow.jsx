@@ -122,13 +122,13 @@ const FullHomeFlow = ({ onComplete, onBackToCategory }) => {
                   key={room.id}
                   title={room.label}
                   imageSrc={
-                    room.id === 'living' ? livingRoomImg :
-                    room.id === 'kitchen' ? kitchenImg :
-                    room.id === 'master_bed' ? masterBedroomImg :
-                    room.id === 'bedroom_2' ? bedroom2Img :
-                    room.id === 'bedroom_3' ? bedroom3Img :
-                    room.id === 'dining' ? diningImg :
-                    studyImg
+                    room.id === 'living' ? getImgUrl("est-room-living") :
+                    room.id === 'kitchen' ? getImgUrl("est-kit-modular") :
+                    room.id === 'master_bed' ? getImgUrl("est-room-master-bedroom") :
+                    room.id === 'bedroom_2' ? getImgUrl("est-room-bedroom-2") :
+                    room.id === 'bedroom_3' ? getImgUrl("est-room-bedroom-3") :
+                    room.id === 'dining' ? getImgUrl("est-room-dining") :
+                    getImgUrl("est-room-study-office")
                   }
                   isSelected={fullHomeConfig.rooms.includes(room.id)}
                   onClick={() => handleRoomToggle(room.id)}
@@ -149,11 +149,11 @@ const FullHomeFlow = ({ onComplete, onBackToCategory }) => {
                   key={type}
                   title={type}
                   imageSrc={
-                    type === '1 BHK' ? oneBhkImg :
-                    type === '2 BHK' ? twoBhkImg :
-                    type === '3 BHK' ? threeBhkImg :
-                    type === '4 BHK+' ? fourBhkImg :
-                    villaImg
+                    type === '1 BHK' ? getImgUrl("est-prop-1bhk") :
+                    type === '2 BHK' ? getImgUrl("est-prop-2bhk") :
+                    type === '3 BHK' ? getImgUrl("est-prop-3bhk") :
+                    type === '4 BHK+' ? getImgUrl("est-prop-4bhk") :
+                    getImgUrl("est-prop-villa")
                   }
                   isSelected={fullHomeConfig.propertyType === type.toLowerCase().replace(' ', '')}
                   onClick={() => updateFullHomeConfig('propertyType', type.toLowerCase().replace(' ', ''))}
@@ -254,11 +254,11 @@ const FullHomeFlow = ({ onComplete, onBackToCategory }) => {
                   key={add.id}
                   title={add.label}
                   imageSrc={
-                    add.id === 'false_ceiling' ? falseCeilingImg :
-                    add.id === 'lighting' ? lightingImg :
-                    add.id === 'painting' ? paintingImg :
-                    add.id === 'curtains' ? curtainsImg :
-                    sofasImg
+                    add.id === 'false_ceiling' ? getImgUrl("est-add-false-ceiling") :
+                    add.id === 'lighting' ? getImgUrl("est-add-decorative-light") :
+                    add.id === 'painting' ? getImgUrl("est-add-wall-paint-texture") :
+                    add.id === 'curtains' ? getImgUrl("est-add-curtains") :
+                    getImgUrl("est-liv-sofas-beds")
                   }
                   isSelected={fullHomeConfig.additions.includes(add.id)}
                   onClick={() => handleAdditionToggle(add.id)}
