@@ -27,7 +27,7 @@ export const projects = [
     title: 'Smart Storage Kitchen',
     location: 'Laheriasarai, Darbhanga',
     description: 'Modular kitchen with deep walnut finish and smart storage solutions.',
-    image: getImgUrl("gal-lobby-01"),
+    image: getImgUrl("est-kit-island"),
     badge: 'New'
   },
   {
@@ -36,7 +36,7 @@ export const projects = [
     title: 'Minimalist L-Shaped Kitchen',
     location: 'Madhubani',
     description: 'Clean, handle-less L-shaped kitchen featuring premium quartz countertops.',
-    image: getImgUrl("gal-kitchen-01"),
+    image: getImgUrl("est-kit-l-shaped"),
     badge: ''
   },
   // BEDROOM
@@ -83,7 +83,7 @@ export const projects = [
     title: 'Premium Sliding Wardrobe',
     location: 'Darbhanga, Bihar',
     description: 'Full-wall sliding wardrobe with mirror panels and clean finishing.',
-    image: getImgUrl("gal-wardrobe-01"),
+    image: getImgUrl("est-wd-sliding2"),
     badge: ''
   },
   {
@@ -111,7 +111,7 @@ export const projects = [
     title: 'Executive Director Cabin',
     location: 'Darbhanga, Bihar',
     description: 'Premium wood paneled executive office with a custom conference desk.',
-    image: getImgUrl("gal-office-02"),
+    image: getImgUrl("est-off-manager-cabin"),
     badge: ''
   },
   // FULL INTERIOR
@@ -121,7 +121,7 @@ export const projects = [
     title: 'Complete Home Setup',
     location: 'Darbhanga City',
     description: 'End-to-end interior design including all furniture and fixtures.',
-    image: getImgUrl("gal-showroom-01"),
+    image: getImgUrl("est-prop-villa"),
     badge: 'Popular'
   },
   {
@@ -130,7 +130,7 @@ export const projects = [
     title: 'Heritage Villa Restoration',
     location: 'Muzaffarpur',
     description: 'Complete interior overhaul combining traditional woodwork with modern design.',
-    image: getImgUrl("gal-lobby-01"),
+    image: getImgUrl("est-prop-3bhk"),
     badge: 'Featured'
   }
 ];
