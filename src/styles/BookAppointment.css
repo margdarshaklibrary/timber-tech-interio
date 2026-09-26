@@ -375,7 +375,7 @@
   .booking-form,
   .form-column,
   .info-sidebar {
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   /* Safe-area bottom padding for modern phones */
